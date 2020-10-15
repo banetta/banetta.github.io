@@ -8,12 +8,47 @@
   </url>
   
   <url>
-    <loc>https://banetta.github.io/portfolio/my-first-portfolio/</loc>
+    <loc>https://banetta.github.io/portfolio/java-%EB%8B%A4%EC%9E%90%EA%B0%84-%EB%A9%94%EC%8B%A0%EC%A0%80-%EA%B0%9C%EB%B0%9C/</loc>
+    <lastmod>2020-10-08T01:31:05+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://banetta.github.io/tags/elastic/</loc>
+    <lastmod>2020-10-08T01:31:05+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://banetta.github.io/tags/elastic-search/</loc>
+    <lastmod>2020-10-08T01:31:05+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://banetta.github.io/tags/java/</loc>
+    <lastmod>2020-10-08T01:31:05+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://banetta.github.io/tags/kibana/</loc>
+    <lastmod>2020-10-08T01:31:05+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://banetta.github.io/tags/portfolio/</loc>
     <lastmod>2020-10-08T01:31:05+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://banetta.github.io/portfolio/</loc>
+    <lastmod>2020-10-08T01:31:05+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://banetta.github.io/tags/project/</loc>
+    <lastmod>2020-10-08T01:31:05+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://banetta.github.io/tags/</loc>
     <lastmod>2020-10-08T01:31:05+09:00</lastmod>
   </url>
   
@@ -29,10 +64,6 @@
   
   <url>
     <loc>https://banetta.github.io/categories/</loc>
-  </url>
-  
-  <url>
-    <loc>https://banetta.github.io/tags/</loc>
   </url>
   
 </urlset>

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>HanSang Banetta Kim</title>
-    <link>https://banetta.github.io/</link>
-    <description>Recent content on HanSang Banetta Kim</description>
+    <title>project on HanSang Banetta Kim</title>
+    <link>https://banetta.github.io/tags/project/</link>
+    <description>Recent content in project on HanSang Banetta Kim</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <copyright>© {year} HanSang Banetta Kim</copyright>
     <lastBuildDate>Thu, 08 Oct 2020 01:31:05 +0900</lastBuildDate>
     
-	<atom:link href="https://banetta.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://banetta.github.io/tags/project/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,15 +19,6 @@
       
       <guid>https://banetta.github.io/portfolio/java-%EB%8B%A4%EC%9E%90%EA%B0%84-%EB%A9%94%EC%8B%A0%EC%A0%80-%EA%B0%9C%EB%B0%9C/</guid>
       <description>다자간 메신저 개발 (Java - Term Project) 팀 구성 Han Sang Banetta Kim - https://github.com/BanettaHS Yu https://github.com/yhs9420 주제 정의 다자간 메신저 (참고: 카카오, LINE, Whats App 등)기본 개발 언어는 자바인터넷 or 전화망 or 블루투스 활용사용자 사용 환경은 Windows PC GUIOpen source로 기 개발된 메신저 사용 불허 일정 10/30 (화) 팀구성11/06 (화) 개발 시스템 아이디어 정의 문서 제출 (A4 2~3쪽) (10%) - 교수 평가11/13 (화) 개발 시스템 아키텍처 정의 문서 제출 (A4 2~3쪽) (10%) - 교수 평가12/04 (화) 개발 시스템 1차 데모 평가 (20%) - 동료 상호 평가12/11 (화) 개발 시스템 2차 데모 평가(최종) (60%) - 동로 상호 평가 개발 시스템 아이디어 정의 메신저의 기본 Java를 기반으로 구동되는 다자간 메신저이며, 메신저 간의 네트워크 연결은 인터넷 IPv4 주소로 통신한다.</description>
-    </item>
-    
-    <item>
-      <title>:My First Post</title>
-      <link>https://banetta.github.io/blogs/my-first-post/</link>
-      <pubDate>Thu, 08 Oct 2020 01:30:47 +0900</pubDate>
-      
-      <guid>https://banetta.github.io/blogs/my-first-post/</guid>
-      <description>Hello World!! </description>
     </item>
     
   </channel>
