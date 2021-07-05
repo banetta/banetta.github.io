@@ -131,6 +131,10 @@ if (!doNotTrack) {
 <li>가독성이 높음</li>
 </ol>
 </blockquote>
+<p>더 자세한 특징 내용은 <a href="https://banetta.github.io/post/python-python-%ed%8a%b9%ec%a7%95.md" 
+  
+   target="_blank" rel="noreferrer noopener" 
+>이 글</a>에서 자세히 볼 수 있다.</p>
 <p>수업에서 사용하게 될 IDE는 아래 두 가지를 주로 사용한다.</p>
 <blockquote>
 <ul>
@@ -147,18 +151,18 @@ if (!doNotTrack) {
   
    target="_blank" rel="noreferrer noopener" 
 >Anaconda Individual Edition</a>을 받는다. 링크로 들어가면 현재 접속한 단말에 맞는 버전이 추천되어서 바로 받을 수 있다.</p>
-<p><img src="https://raw.githubusercontent.com/banetta/banetta.github.io/master/post/img/1/anaconda_downloading.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/banetta/banetta.github.io/master/post/img/0/anaconda_downloading.png" alt="img"></p>
 <p>설치를 완료한 뒤, Anaconda Prompt를 실행한다. 이때 권한 문제가 생길 가능성이 있으니 관리자 권한으로 실행한다.</p>
-<p><img src="https://raw.githubusercontent.com/banetta/banetta.github.io/master/post/img/1/anaconda_launch.png" alt="img">
-<img src="https://raw.githubusercontent.com/banetta/banetta.github.io/master/post/img/1/anaconda_main.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/banetta/banetta.github.io/master/post/img/0/anaconda_launch.png" alt="img">
+<img src="https://raw.githubusercontent.com/banetta/banetta.github.io/master/post/img/0/anaconda_main.png" alt="img"></p>
 <p>Anaconda를 설치 한 뒤 제일 처음 진행할 작업은 Python으로 작성된 파키지 소프트웨어를 관리하는 시스템인 pip를 업그레이드 해준다.</p>
 <pre><code class="language-bash">python -m pip install --upgrade pip
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/banetta/banetta.github.io/master/post/img/1/pip_upgrade.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/banetta/banetta.github.io/master/post/img/0/pip_upgrade.png" alt="img"></p>
 <p>다음으로 우리가 jupyter notebook을 사용할 가상 환경을 하나 만들어준다. 명령어는 <b>conda</b>를 사용한다.<br>여기서는 수업의 편의를 위해 python의 버전을 3.7로 진행하였고 openssl을 추가하였다. 각자 원하는 환경에 맞춰서 옵션을 추가하거나 수정하면 된다.</p>
 <pre><code class="language-bash">conda create -n [$env_name] python=[$python_version] openssl
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/banetta/banetta.github.io/master/post/img/1/pip_upgrade.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/banetta/banetta.github.io/master/post/img/0/pip_upgrade.png" alt="img"></p>
 <p>지금 새로 생성한 환경을 포함해 현재 Anaconda에 존재하는 모든 가상환경을 볼 수 있는 명령어와 필요없는 가상환경을 지우는 명령어 역시 <b>conda</b>명령어를 사용한다.</p>
 <pre><code class="language-bash"># anaconda에 존재하는 가상환경 출력
 conda info --envs
@@ -166,12 +170,12 @@ conda info --envs
 # 필요없는 가상환경 삭제
 conda remove --name [$env_name] --all
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/banetta/banetta.github.io/master/post/img/1/conda_env_list_remove.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/banetta/banetta.github.io/master/post/img/0/conda_env_list_remove.png" alt="img"></p>
 <p>conda activate 명령을 통해 생성한 가상 환경으로 전환하고 jupyter notebook을 설치하고 설정을 위해 필요한 라이브러리인 nb_conda를 설치한다.</p>
 <pre><code class="language-bash">conda activate [$env_name]
 conda install nb_conda
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/banetta/banetta.github.io/master/post/img/1/nbconda1.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/banetta/banetta.github.io/master/post/img/0/nbconda1.png" alt="img"></p>
 <p>jupyter notebook의 설치는 끝났다. 여기서 추가적으로 jupyter notebook이 동작하는 홈 디렉토리를 변경할 수 있다.</p>
 <pre><code class="language-bash">jupyter notebook [$Path]
 </code></pre>
@@ -180,13 +184,13 @@ conda install nb_conda
 <pre><code class="language-bash"># jupyter_notebook_config.py 파일을 생성한다.
 jupyter notebook --generate-config
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/banetta/banetta.github.io/master/post/img/1/config_generate.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/banetta/banetta.github.io/master/post/img/0/config_generate.png" alt="img"></p>
 <p>설정 파일은 Windows 기준 현재 로그인 되어있는 계정 프로필 폴더에 .jupyter 폴더 안에 있다. 이 파일을 열어서 &ldquo;c.NotebookApp.notebook_dir&quot;을 찾아서 경로를 넣고 주석 해제하면 끝</p>
-<p><img src="https://raw.githubusercontent.com/banetta/banetta.github.io/master/post/img/1/jupyter_config_path1.png" alt="img">
-<img src="https://raw.githubusercontent.com/banetta/banetta.github.io/master/post/img/1/jupyter_config_path2.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/banetta/banetta.github.io/master/post/img/0/jupyter_config_path1.png" alt="img">
+<img src="https://raw.githubusercontent.com/banetta/banetta.github.io/master/post/img/0/jupyter_config_path2.png" alt="img"></p>
 <p>이젠 jupyter notebook 명령어만 사용해도 미리 세팅해둔 홈 디렉토리에서 바로 작업이 가능하다.</p>
-<p><img src="https://raw.githubusercontent.com/banetta/banetta.github.io/master/post/img/1/run_jupyter.png" alt="img">
-<img src="https://raw.githubusercontent.com/banetta/banetta.github.io/master/post/img/1/jupyter_main.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/banetta/banetta.github.io/master/post/img/0/run_jupyter.png" alt="img">
+<img src="https://raw.githubusercontent.com/banetta/banetta.github.io/master/post/img/0/jupyter_main.png" alt="img"></p>
 
 
               
