@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+
+<head>
+  <title>[Python]_DataType | HanSang Banetta Kim</title>
+
+  <meta charset="UTF-8">
+  <meta name="language" content="en">
+  <meta name="description" content="">
+  <meta name="keywords" content="Python , 파이썬">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  
+  
+
+  <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
+
+
+  
+  
+    
+ 
+  
+  
+  
+  
+  
+  
+    
+    <link type="text/css" rel="stylesheet" href="/css/post.min.d2cba5d8ddb952ac69f5be48e4a5cc7b8e952b422625763ebf77d449dc5e4387.css" integrity="sha256-0sul2N25Uqxp9b5I5KXMe46VK0ImJXY&#43;v3fUSdxeQ4c="/>
+  
+    
+    <link type="text/css" rel="stylesheet" href="/css/custom.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" integrity="sha256-47DEQpj8HBSa&#43;/TImW&#43;5JCeuQeRkm5NMpJWZG3hSuFU="/>
+  
+  
+   
+   
+    
+
+<script type="application/ld+json">
+  
+    { 
+      "@context": "http://schema.org", 
+      "@type": "WebSite", 
+      "url": "https:\/\/banetta.github.io\/post\/3_python_datatype\/",
+      "name": "[Python]_DataType",
+      "author": {
+        "@type": "Person",
+        "name": ""
+      },
+      "description": ""
+    }
+  
+  </script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-176305772-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</head>
+
+<body>
+  <div class="burger__container">
+  <div class="burger" aria-controls="navigation" aria-label="Menu">
+    <div class="burger__meat burger__meat--1"></div>
+    <div class="burger__meat burger__meat--2"></div>
+    <div class="burger__meat burger__meat--3"></div>
+  </div>
+</div>
+ 
+
+  <nav class="nav" id="navigation">
+  <ul class="nav__list">
+    
+    
+      <li>
+        <a  href="/">About</a>
+      </li>
+    
+      <li>
+        <a  href="/archives">Archives</a>
+      </li>
+    
+      <li>
+        <a  class="active"
+         href="/post">Post</a>
+      </li>
+    
+      <li>
+        <a  href="/tags">Tags</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+  <main>
+    
+    
+
+    <div class="flex-wrapper">
+      <div class="post__container">
+        <div class="post">
+          <header class="post__header">
+            <h1 id="post__title">[Python]_DataType</h1>
+            <time datetime="2021-07-06 00:12:52 &#43;0900 KST" class="post__date">Jul 6 2021</time> 
+          </header>
+          <article class="post__content">
+              
+<h1 id="변수의-생성과-삭제">변수의 생성과 삭제</h1>
+<pre><code class="language-python"># 변수의 생성과 삭제
+a = 100
+print(a)
+del a
+#print(a) # error 발생
+
+'''
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+&lt;ipython-input-5-eb63b6d3deb5&gt; in &lt;module&gt;
+      3 print(a)
+      4 del a
+----&gt; 5 print(a)
+
+NameError: name 'a' is not defined
+
+'''
+</code></pre>
+<h1 id="data-type">Data Type!</h1>
+<p>Python에서 기본적으로 제공하는 <code>built-in DataType</code>으로 아래 6가지를 주로 많이 사용함</p>
+<blockquote>
+<p><a href="#-1-numeric%ec%88%ab%ec%9e%90%ed%98%95" 
+  
+  
+>1. Numeric(숫자형)</a></p>
+<p><a href="#-2-sequence" 
+  
+  
+>2. Sequence</a></p>
+<p><a href="#-3-text-sequence" 
+  
+  
+>3. Text Sequence</a></p>
+<p><a href="#-4-dictionary" 
+  
+  
+>4. Dictionary</a></p>
+<p><a href="#-5-set" 
+  
+  
+>5. Set</a></p>
+<p><a href="#-6-bool" 
+  
+  
+>6. Bool</a></p>
+</blockquote>
+<p>이런 DataType을 확인하고 싶거나 데이터가 어떤 class의 instance인지 확인하고 싶으면 <code>type()</code>함수를 사용하면 확인할 수 있다.</p>
+<pre><code class="language-python">print(type(a))
+</code></pre>
+<h2 id="1-numeric숫자형data-type"><a href="#data-type" 
+  
+  
+>1. Numeric(숫자형)</a></h2>
+<hr>
+<p>Numeric 타입은 숫자 값을 저장한다.</p>
+<pre><code>- int(부호있는 정수)
+- long(int 보다 긴 정수, 8, 16진수 표현 가능)
+- float(부동소수점이 있는 실수)
+- complex(복소수)
+</code></pre>
+<pre><code class="language-python"># example
+
+# integer
+a = 123
+a = -178
+a = 0
+
+# floating-point
+a = 1.2
+a = -3.45
+
+# float
+a = 4.24E10
+a = 4.24e-10
+
+# Octal
+# 숫자0, 알파벳 o, O로 사용
+a = 0o177
+
+# Hexadecimal
+# 0x로 시작
+
+a = 0x8ff
+b = 0xABC
+
+# complex
+a = 3.14j
+b = 4.53e1-7j
+</code></pre>
+<br>
+<details>
+<summary>Tip. 왜 파이썬은 허수단위를 <b>j</b>로 사용하는가?</summary>
+<p><code>i</code>는 많은 폰트에서 <code>1(숫자)</code>, <code>l(L)</code>과 관련하여 모호성 문제를 가지고 있어서 시각적으로 특이한 편인 <code>j</code>를 사용한다고 한다.</p>
+<blockquote>
+<p><em>관련 thread</em>  <a href="https://bugs.python.org/issue10562" 
+  
+   target="_blank" rel="noreferrer noopener" 
+>Change &lsquo;j&rsquo; for imaginary unit into an &lsquo;i&rsquo;</a></p>
+</blockquote>
+</details>
+<br>
+<h3 id="숫자형을-활용하기-위한-연산자">숫자형을 활용하기 위한 연산자<a class="anchor" href="#숫자형을-활용하기-위한-연산자">#</a></h3>
+<ul>
+<li>사칙연산
+<ul>
+<li>기본적인 사칙연산(<code>+, -, *, /</code>)은 계산기처럼 바로 작성해서 사용하면 된다.</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-python">a + b
+
+a - b
+
+a * b
+
+a / b
+</code></pre>
+<ul>
+<li>x의 y제곱을 나타내는 <code>**</code> 연산자
+<ul>
+<li>x의 y제곱($x^y$)값을 돌려준다.</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-python">x ** y
+</code></pre>
+<ul>
+<li>나눗셈 <code>//, %</code> 연산자</li>
+</ul>
+<pre><code class="language-python"># 나눗셈 후 나머지를 반환
+a % b
+
+# 나눗셈 후 몫을 반환
+7 / 4 # 1.75
+
+7 // 4 # 1
+</code></pre>
+<h2 id="2-sequencedata-type"><a href="#data-type" 
+  
+  
+>2. Sequence</a></h2>
+<hr>
+<ul>
+<li>DataType - <code>List</code>
+<ul>
+<li>임의의 객체를 순서대로 저장하는 집합</li>
+<li><code>index</code>를 이용해서 위치 지정이 가능하고 0부터 시작한다.</li>
+<li>Literal 표현 : <code>[ ]</code> (대괄호)</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-python">a = [] # Literal형 empty list
+a = list() # Function형 empty list -&gt; 제일 일반적으로 사용함
+
+a = [1, 2, 3] # Numpy ndarray와 구분 주의! [1 2 3]
+a = [1, 3.14, '홍길동', True] # int, float, String, bool
+a = [1, 3.14, ['Hello',5], True] # 중첩리스트를 허용함 2차원배열은 아님 이 부분은 Numpy 부분에서 나올 것
+</code></pre>
+<ul>
+<li>DataType - <code>Tuple</code>
+<ul>
+<li>list와 상당히 유사함</li>
+<li>list와 다른점은 tuple은 <code>Read Only</code></li>
+<li>Literal 표현 : <code>( )</code></li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-python">a = () # 요소가 없는 tuple
+a = (1, 2, 3)
+
+# 원래 연산자 우선수행 소괄호와의 문제 ex.(1 + 3) * 4
+# 연산자 우선수행 소괄호와 구분하기 위해 요소가 1개인 tuple의 리터럴 표현은 ,를 추가한다.
+a = (1,) 
+print(type(a)) # &lt;class 'tuple'&gt;
+a = (1) 
+print(type(a)) # &lt;class 'int'&gt;
+
+# tuple은 ()를 생략할 수 있다
+a = 1, 2, 3
+print(type(a)) # &lt;class 'tuple'&gt;
+
+# tuple 안에 다양한 형태의 요소들이 들어갈 수 있다.
+a = 1, 2, (3, 4), [5, 6], 7
+
+# 변경하는 객체에는 그 객체의 속성이 적용됨
+# tuple 안에 있는 list의 요소 변경 가능
+a[3][0] = 100
+print(a[3][0]) # 100
+# 아래 예시처럼 tuple안에 있는 요소는 변경이 불가
+# a[3] = 100
+
+# list와 tuple간 형변환은 자유롭다
+a = (1, 2, 3)
+b = 4, 5, 6
+print(a + b) # (1, 2, 3, 4, 5, 6)
+
+a = [1, 2, 3]
+b = tuple(a)
+print(b) # (1, 2, 3)
+
+a = (4, 5, 6)
+result = list(a)
+print(result) # [4, 5, 6]
+</code></pre>
+<ul>
+<li>DataType - <code>Range</code>
+<ul>
+<li><code>for</code>등의 <code>반복문</code>에서 주로 사용</li>
+<li><code>list</code>에 비해서 작은 메모리 공간으로 큰 데이터 표현이 가능하여 <code>효율</code>이 좋다.</li>
+<li>보통 추가 연산자인 <code>in</code>을 같이 사용하는 경우가 많다.</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-python"># range(처음, 끝, 증감)
+a = range(1, 10, 1) # 1부터 9까지 1씩 증가하는 range
+print(a) # range(1, 10)
+# range 함수 형태로 표현되며 증감 값이 1이면 보통 생략해서 출력된다.
+
+# 초기값과 증감이 빠진 경우 둘 다 내부적으로 최소 시작값인 0과 1로 정해서 사용된다
+a = range(10)
+print(a) # range(0, 10)
+
+# indexing slicing
+print(a[0]) # 0
+print(a[:3]) # range(0, 3)
+
+a = range(3, 100, 10)
+print(a[1]) # 13
+
+# range와 많이 사용되는 추가 연산자 in
+# 특정 요소가 연속형 자료형 안에 포함 여부를 판별한다.
+print(7 in range(10)) # True
+print(100 in range(10)) # False
+# indexing slicing
+print(range(1, 20, 3)[-1]) # 19
+</code></pre>
+<h3 id="indexing--slicing-기법"><strong>Indexing &amp; Slicing 기법</strong><a class="anchor" href="#indexing--slicing-기법">#</a></h3>
+<hr>
+<p>인덱싱(Indexing)이란 무언가를 <code>가리킨다</code>는 의미고 슬라이싱(Slicing)은 무언가를 <code>잘라낸다</code>는 의미이다.</p>
+<ul>
+<li>indexing</li>
+</ul>
+<pre><code class="language-python"># indexing 기법
+# 숫자 index는 시작이 0부터 시작함
+a = [1, 3.14, ['Hello',5], True]
+
+print(a[0])    
+print(a[2])
+print(a[2][0])
+a[3] = 200
+print(a)
+
+print(a[-2]) # ['Hello', 5]
+print(a[-2][1]) # 5
+
+# output
+# 1
+# ['Hello', 5]
+# Hello
+# [1, 3.14, ['Hello', 5], 200]
+# ['Hello', 5]
+# 5
+</code></pre>
+<ul>
+<li>slicing</li>
+</ul>
+<pre><code class="language-python"># slicing =&gt; slicing의 결과는 원래 데이터 타입과 동일하다.
+a = [1, 3.14, ['Hello',5], True]
+
+print(a[0:2]) # 0부터 2개 slicing(앞은 inclusive 뒤는 exclusive)
+              # 앞은 포함, 뒤는 불포함한다.
+print(a[0:1]) # 주의 [1]과 1은 다르다 
+print(a[2:])  # 2부터 끝까지 slicing
+print(a[:2])  # 처음부터 2개 slicing
+print(a[:])   # 그대로 slicing
+
+# output
+# [1, 3.14, ['Hello', 5], 200]
+# [1, 3.14]
+# [1]
+# [['Hello', 5], 200]
+# [1, 3.14]
+# [1, 3.14, ['Hello', 5], 200]
+</code></pre>
+<h3 id="sequence와-함께-사용하는-method">Sequence와 함께 사용하는 Method<a class="anchor" href="#sequence와-함께-사용하는-method">#</a></h3>
+<ul>
+<li>append()
+<ul>
+<li>List 마지막에 요소를 추가하는 함수</li>
+<li>2가지 형태로 사용이 되는데 원본이 바뀌는 경우와 결과 값이 return되는 경우가 있음</li>
+<li><code>append()</code>는 원본이 바뀌는 경우로 return값이 없다. 즉, 원본만 바뀌기 때문에 위의 문장처럼 결과 값을 받는 경우에 값이 들어가지 않기 때문</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-python">a = [1, 2, 3]
+result = a.append(4) # 틀린 형태 (의미없는 형태)
+print(result) # None 
+
+a.append([4, 5, 6]) # append 함수는 입력받은 값을 '그대로' 삽입한다.
+print(a) # [1, 2, 3, [4, 5, 6]]
+</code></pre>
+<ul>
+<li>extended()
+<ul>
+<li><code>append()</code>와 다르게 리스트를 <code>확장</code>시키는 개념</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-python">a = [1, 2, 3]
+a.extend([4, 5, 6]) 
+print(a) # [1, 2, 3, 4, 5, 6]
+</code></pre>
+<ul>
+<li>sort()
+<ul>
+<li>정렬</li>
+<li>기본적으로 오름차순으로 정렬함</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-python">a = [3, 7, 10, 1, 2, 8, 4]
+a.sort()
+print(a) # [1, 2, 3, 4, 7, 8, 10]
+</code></pre>
+<ul>
+<li>reverce()
+<ul>
+<li>List 뒤집기</li>
+<li>sort()와 함께 사용하면 내림차순으로 정렬이 가능하다.</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-python">a.reverse()
+print(a) # [10, 8, 7, 4, 3, 2, 1]
+</code></pre>
+<h2 id="3-text-sequencedata-type"><a href="#data-type" 
+  
+  
+>3. Text Sequence</a></h2>
+<hr>
+<ul>
+<li>
+<p>우리가 흔히 다른언어에서 String이라 부르는 것들을 Python에서 Text Sequence DataType이라 한다.</p>
+</li>
+<li>
+<p><code>str class</code>를 사용한다.</p>
+</li>
+<li>
+<p>다른 언어(<code>java</code>나 <code>c++</code>등) 문자(<code>character</code>)와 문자열(<code>String</code>)을 구분하나(<code>'a', &quot;a&quot;</code>) Python은 구분하지 않고 모두 문자열로 취급한다.</p>
+</li>
+<li>
+<p>표현 역시 구분하지 않기에 <code>'', &quot;&quot;</code> 두 표현 모두 사용이 가능하다.</p>
+</li>
+<li>
+<p>list안에 각 요소가 문자로 구성되어있다.</p>
+</li>
+<li>
+<p>문자열 handling은 주의하여 잘 다뤄야 한다.</p>
+</li>
+<li>
+<p>머신러닝 모델을 만들기 위해서는 Low Data 가공할 때 정확하지 않다면 <code>GIGO(Garbage In Garbage Out)</code>의 결과가 나올 수 있다.</p>
+</li>
+</ul>
+<pre><code class="language-python">a = 'Hello'
+b = 'world'
+print(a + b) # Helloworld
+
+# indexing slicing
+a = &quot;This is a Sample Text&quot;
+print(a[5]) # i
+print(type(a)) # &lt;class 'str'&gt;
+print(a[3:9]) # s is a
+
+# 문자열은 제어하기 위한 정말 많은 함수가 제공되어있음
+# upper() 대문자화
+# 원본의 변화가 아닌 결과값에 적용되는 함수임
+print(a.upper()) # THIS IS A SAMPLE TEXT
+print(a) # This is a Sample Text
+
+
+# 문자열 끼워넣기
+
+apple = 5
+banana = 7
+
+# naive한 방법
+print('철수는 사과를 ' + str(apple) + '개 가지고 있고 영희는 바나나를 ' + str(banana) + '개 가지고 있어요')
+# 철수는 사과를 5개 가지고 있고 영희는 바나나를 7개 가지고 있어요
+
+# format()
+# formating 기호 추가
+# 완성되지 않은 문장을 추가함 즉, 나중에 추가될 부분을 표기하고 지정해둠
+text = '철수는 사과를 {}개 가지고 있고 영희는 바나나를 {}개 가지고 있어요'
+print(text.format(apple, banana))
+# 철수는 사과를 5개 가지고 있고 영희는 바나나를 7개 가지고 있어요
+print('포도를 {}송이 주세요!'.format(100)) # 많이 쓰는 형태
+# 포도를 100송이 주세요!
+
+# len() 
+# 변수의 길이를 출력함
+a = 'cocacola'
+print(len(a)) # 8
+
+# index()
+# 받은 인자 값이 있는 첫 index를 return
+print(a.index('a')) # 3
+
+# split()
+# 문자열을 공백 혹은 지정한 특정 기준으로 분할해서 각각 list에 넣어서 return
+a = 'this is a sample text'
+result = a.split()
+print(result) # ['this', 'is', 'a', 'sample', 'text']
+
+a = 'a,b,c,d,e'
+result = a.split(',')
+print(result) # ['a', 'b', 'c', 'd', 'e']
+</code></pre>
+<h2 id="4-dictionarydata-type"><a href="#data-type" 
+  
+  
+>4. Dictionary</a></h2>
+<hr>
+<ul>
+<li>사람은 누그든지 <code>이름 = 홍길동</code>, <code>생일 = xx월 xx일</code> 등으로 구별할 수 있다.</li>
+<li>이러한 대응 관계를 <code>연관 배열(Associative array)</code> 또는 <code>해시(Hash)</code>라고 한다. Python에서는 <code>딕셔너리(Dictionary)</code>라고 한다.</li>
+<li>Dictionary는 list나 tuple처럼 <code>순차적으로(sequential)</code> 해당 요솟값을 구하지 않고 <code>Key</code>를 통해 <code>Value</code>를 얻는다. 다만 최근에는 순서가 있는게 편하다는 의견이 많아 최신 파이썬에서는 순서가 있다.</li>
+<li>표현은 중괄호를 통해 표현한다. <code>{key : value}</code></li>
+</ul>
+<pre><code class="language-python">a = {'용돈' : '10000', '월급' : '10000000000'}
+print(type(a))
+
+# indexing slicing
+print(a['용돈'])
+# 순서가 없기때문에 slicing은 적용이 되지 않는다
+# print(a[:1])
+a['용돈'] = 20000
+print(a['용돈'])
+
+# 다른 언어와 다르게 특이하게 새로 추가하는것도 가능
+a['연봉'] = '9999999999999'
+print(a)
+
+# 잘못된 사용 방식이지만, python이 중복 키값을 인식해서 이전 키를 지우고 덮어씌움 당연히 사용하면 안좋음
+a = {'용돈': 20000, '월급': '10000000000', '연봉': '9999999999999', '용돈': 40000}
+print(a)
+
+# 키값은 반드시 수정이 안되는 값으로 사용되어야함
+# 키값에 List 사용 안됨
+'''
+a = { [10, 20] : 'Hello'}
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+&lt;ipython-input-73-6dc4d823cf2a&gt; in &lt;module&gt;
+     28 # 키값은 반드시 수정이 안되는 값으로 사용되어야함
+     29 # 키값에 List 사용 안됨
+---&gt; 30 a = { [10, 20] : 'Hello'}
+
+TypeError: unhashable type: 'list'
+
+'''
+# 수정이 불가하게 Read Only인 tuple은 사용 가능하나 일반적으로 문자열을 키값으로 이용함
+a = { (10, 20) : 'Hello'}
+print(a)
+
+# dictionary와 관련된 함수 3개
+# keys()
+# dictionary의 key값만 추출
+a = {'용돈': 20000, '월급': '10000000000', '연봉': '9999999999999'}
+print(a.keys())
+# 출력 값이 dict_keys(['용돈', '월급', '연봉']) 인걸 보고 알수 있듯이 다른list형태의 클래스인 dict_keys 이지만 일반적인 list와 똑같이 사용할 수 있다.
+
+# valuse()
+# dictionary의 value값만 추출
+print(a.values())
+
+# items()
+# disctionary의 하나의 key와 value를 tuple로 묶어 하나의 객체? 요소로 만들어서 listup함
+# 사용하는 이유는 sorting을 하여 반복처리가 가능해진다!
+print(a.items())
+</code></pre>
+<h2 id="5-setdata-type"><a href="#data-type" 
+  
+  
+>5. Set</a></h2>
+<hr>
+<ul>
+<li>집합 자료형</li>
+<li>사용되는 class명도 <code>set</code></li>
+<li>쉽게 표현하면 주머니를 생각하면 됨</li>
+<li>key와 value의 개념이 없이 Data인 value만 저장함</li>
+<li>순서가 없고 중복해서 저장이 안됨</li>
+<li>중복 check가 필요할 때 별도의 logic없이 간편하게 사용이 가능하다.</li>
+<li>dict와 set의 표현 방식은 같으나, key의 입력 여부에 따라 바뀐다.</li>
+</ul>
+<pre><code class="language-python">a = {1, 2, 3}
+print(type(a))
+
+a = [1, 2, 1, 2, 3, 3, 5]
+result = set(a)
+print(result)
+
+# set의 연산
+# 집합연산(합집합, 교집합, 차집합 등)
+# 보이는 부분만 정렬되서 나옴 실제로는 정렬안댐
+
+a = set([1, 8, 3, 4])
+b = set([3, 4, 5, 6])
+
+# Union 합집합
+print(a | b)
+
+# Intersection 교집합
+print(a &amp; b)
+
+# Difference 차집합
+print(a - b)
+</code></pre>
+<h2 id="6-booldata-type"><a href="#data-type" 
+  
+  
+>6. Bool</a></h2>
+<hr>
+<ul>
+<li>논리값인 True &amp; False</li>
+<li>Python에서는 대문자 구분을 하기에 반드시 대문자로 입력해야함</li>
+<li>연산자는 and, or, not 3가지를 사용함</li>
+<li>다음의 경우에는 False로 간주함
+<blockquote>
+<ul>
+<li>빈 Text Sequence( &lsquo;', &quot;&rdquo; )은 논리값으로 False로 간주</li>
+<li>빈 List( [] )는 논리값으로 False로 간주</li>
+<li>빈 tuple( () )는 논리값으로 False로 간주</li>
+<li>빈 dictionary( {} )는 논리값으로 False로 간주</li>
+<li>Numeric class의 inteser type인 숫자 0은 False로 간주하고 이외의 다른 숫자는 True로 인식</li>
+<li>변수 안에 값이 비어서 나오는 return값인 None도 False로 간주</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<pre><code class="language-python">a = True
+b = False
+print(a)
+print(b)
+print(a and b)
+print(a or b)
+print(not a)
+print(not b)
+</code></pre>
+
+
+              
+                  
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+              
+          </article>
+          
+
+<ul class="tags__list">
+    
+    <li class="tag__item">
+        <a class="tag__link" href="https://banetta.github.io/tags/python/">Python</a>
+    </li>
+    <li class="tag__item">
+        <a class="tag__link" href="https://banetta.github.io/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC/">파이썬</a>
+    </li></ul>
+
+ <div class="pagination">
+  
+    <a class="pagination__item" href="https://banetta.github.io/post/2_python_comments.md/">
+        <span class="pagination__label">Previous Post</span>
+        <span class="pagination__title">[Python] Comments 주석</span>
+    </a>
+  
+  
+</div>
+<script src="https://utteranc.es/client.js"
+repo="banetta/blog_comments"
+issue-term="title"
+theme="github-light"
+crossorigin="anonymous"
+async>       
+</script>
+
+
+          
+          <footer class="post__footer">
+            
+
+
+<div class="social-icons">
+  
+     
+    
+      <a
+        class="social-icons__link"
+        title="GitHub"
+        href="https://github.com/banetta"
+        target="_blank"
+        rel="me noopener"
+      >
+        <div class="social-icons__icon" style="background-image: url('https://banetta.github.io/svg/github.svg')"></div>
+      </a>
+    
+  
+     
+    
+      <a
+        class="social-icons__link"
+        title="Email"
+        href="mailto:banetion@gmail.com"
+        target="_blank"
+        rel="me noopener"
+      >
+        <div class="social-icons__icon" style="background-image: url('https://banetta.github.io/svg/email.svg')"></div>
+      </a>
+    
+  
+     
+    
+      <a
+        class="social-icons__link"
+        title="LinkedIn"
+        href="https://www.linkedin.com/in/han-sang-kim-aa8141153/"
+        target="_blank"
+        rel="me noopener"
+      >
+        <div class="social-icons__icon" style="background-image: url('https://banetta.github.io/svg/linkedin.svg')"></div>
+      </a>
+    
+     
+</div>
+
+            <p>© 2021 HanSang Banetta Kim</p>
+          </footer>
+          </div>
+      </div>
+      
+    </div>
+    
+
+  </main>
+
+   
+
+  
+  <script src="/js/index.min.49e4d8a384357d9b445b87371863419937ede9fa77737522ffb633073aebfa44.js" integrity="sha256-SeTYo4Q1fZtEW4c3GGNBmTft6fp3c3Ui/7YzBzrr&#43;kQ=" crossorigin="anonymous"></script>
+  
+  
+  <script src="https://unpkg.com/prismjs@1.20.0/components/prism-core.min.js"></script>
+
+  
+  <script src="https://unpkg.com/prismjs@1.20.0/plugins/autoloader/prism-autoloader.min.js"
+    data-autoloader-path="https://unpkg.com/prismjs@1.20.0/components/"></script>
+
+  
+
+
+</body>
+
+</html>
