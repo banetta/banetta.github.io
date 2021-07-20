@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+
+<head>
+  <title>[Python] 함수(Function) | HanSang Banetta Kim</title>
+
+  <meta charset="UTF-8">
+  <meta name="language" content="en">
+  <meta name="description" content="">
+  <meta name="keywords" content="Python , 파이썬">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  
+  
+
+  <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
+
+
+  
+  
+    
+ 
+  
+  
+  
+  
+  
+  
+    
+    <link type="text/css" rel="stylesheet" href="/css/post.min.d2cba5d8ddb952ac69f5be48e4a5cc7b8e952b422625763ebf77d449dc5e4387.css" integrity="sha256-0sul2N25Uqxp9b5I5KXMe46VK0ImJXY&#43;v3fUSdxeQ4c="/>
+  
+    
+    <link type="text/css" rel="stylesheet" href="/css/custom.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" integrity="sha256-47DEQpj8HBSa&#43;/TImW&#43;5JCeuQeRkm5NMpJWZG3hSuFU="/>
+  
+  
+   
+   
+    
+
+<script type="application/ld+json">
+  
+    { 
+      "@context": "http://schema.org", 
+      "@type": "WebSite", 
+      "url": "https:\/\/banetta.github.io\/post\/5_python_%ED%95%A8%EC%88%98function\/",
+      "name": "[Python] 함수(Function)",
+      "author": {
+        "@type": "Person",
+        "name": ""
+      },
+      "description": ""
+    }
+  
+  </script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-176305772-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</head>
+
+<body>
+  <div class="burger__container">
+  <div class="burger" aria-controls="navigation" aria-label="Menu">
+    <div class="burger__meat burger__meat--1"></div>
+    <div class="burger__meat burger__meat--2"></div>
+    <div class="burger__meat burger__meat--3"></div>
+  </div>
+</div>
+ 
+
+  <nav class="nav" id="navigation">
+  <ul class="nav__list">
+    
+    
+      <li>
+        <a  href="/">About</a>
+      </li>
+    
+      <li>
+        <a  href="/archives">Archives</a>
+      </li>
+    
+      <li>
+        <a  class="active"
+         href="/post">Post</a>
+      </li>
+    
+      <li>
+        <a  href="/tags">Tags</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+  <main>
+    
+    
+
+    <div class="flex-wrapper">
+      <div class="post__container">
+        <div class="post">
+          <header class="post__header">
+            <h1 id="post__title">[Python] 함수(Function)</h1>
+            <time datetime="2021-07-14 17:40:04 &#43;0900 KST" class="post__date">Jul 14 2021</time> 
+          </header>
+          <article class="post__content">
+              
+<blockquote>
+<h2 id="y--fx">y = f(x)<a class="anchor" href="#y--fx">#</a></h2>
+<ul>
+<li>특정 역할을 수행하는 코드 집합을 하나의 단위로 묶어놓은 것</li>
+<li>입력값을 가지고 어떤 일을 수행한 다음에 그 결과물을 내어놓는 것</li>
+</ul>
+</blockquote>
+<h2 id="python의-함수적-특징">Python의 함수적 특징<a class="anchor" href="#python의-함수적-특징">#</a></h2>
+<h3 id="1-사용자-정의-함수-user-define-function">1. 사용자 정의 함수 (User define function)<a class="anchor" href="#1-사용자-정의-함수-user-define-function">#</a></h3>
+<ul>
+<li>함수를 정의할 때 사용하는 keyword : <code>def</code></li>
+<li>함수명을 정의할 때 가독성이 있는 이름으로 정의해야한다.
+<ul>
+<li>숫자로 시작하면 안되고 대문자로 시작하지 않는다.</li>
+<li>대문자로 시작하게 되면 Class를 지칭할 때와 겹치기 때문에 주의해야한다.</li>
+<li>_를 이용해서 의미를 구분해도 좋다 다른 특수기호는 쓰지 말것</li>
+<li>함수 표현 : name_search, 클래스 표현 : NameSearch</li>
+<li>다른 함수와 겹치지 않고 이미 사용하는 용어를 사용하지 않게 잘 지어야 한다.</li>
+<li>단일 단어로 사용하는건 권장하지 않음</li>
+<li>jupyter notebook 기준 녹색은 이미 있는 word, 파란색이 사용가능한 word로 ide별로 구분되서 알려주는경우가 있음</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-python">def my_sum(a, b):
+    print('입력받은 값은 {}, {} 입니다.'.format(a, b))
+    return a + b
+
+print(my_sum(100, 100))
+# --- result ---
+# 입력받은 값은 100, 100 입니다.
+# 200
+</code></pre>
+<ul>
+<li>(객체지향 제외하고 일단 naive하게 한다면) 인자값을 받을 환경이 달라질 때마다 함수를 새로 정의해야하는 상황이 있음</li>
+<li>이럴 때 다수의 인자를 전달할 수 있는 방법이 있음</li>
+<li>인자 부분에 <code>wildcard *</code> 를 이용하여 표현해도 된다. 이때 <code>tuple</code> 형태로 입력데이터를 받는다.</li>
+</ul>
+<pre><code class="language-python">def my_sum(*a):
+    print('입력받은 값은 {} 입니다.'.format(a))
+    result = 0
+    for tmp in a:
+        result += tmp
+    return result
+
+print(my_sum(100, 100, 1, 2, 3, 4, 5, 6))
+# --- result ---
+# 입력받은 값은 (100, 100, 1, 2, 3, 4, 5, 6) 입니다.
+# 221
+</code></pre>
+<h3 id="2-python의-메모리-특성">2. Python의 메모리 특성<a class="anchor" href="#2-python의-메모리-특성">#</a></h3>
+<ul>
+<li>특정 변수가 가지고 있는 주소값을 알고 싶을 때: id()</li>
+<li>숫자는 많이 사용하기에 메모리 효율성을 위해 int 256까지(System마다 상이함)는 객체를 1개만 만들어서 공유해서 사용한다.</li>
+<li>Python은 1급함수를 지원하기에 함수의 address만 넘겨서 처리가 가능하다.</li>
+</ul>
+<pre><code class="language-python">print(id(a))
+ # 140720166120960 
+#  정수값으로 표현된 메모리 주소, 직접 접근은 안되니 컨버팅된 주소가 나온 것
+
+a = [1, 2, 3] # 2014906646408
+print(id(a))
+b = [1, 2, 3] # 2014906566664
+print(id(b))
+print(a == b) # True 내용이 같은가? Yes
+print(a is b) # False 메모리 id까지 공유해서 같은가? No
+
+a = 50
+b = 50
+print(a is b) 
+# True 숫자는 워낙 많이 사용하기 때문에 메모리 효율성을 위해 int 256까지(System마다 상이함)는 객체를 1개만 만들어서 공유해서 사용
+
+a = 256
+b = 256
+print(a is b)
+
+a = 257
+b = 257
+print(a is b)
+
+# python은 함수의 address만 넘겨서 처리가 가능하다 즉 1급 함수를 지원한다.
+def test_func(a, b):
+    print(&quot;안녕하세요&quot;)
+    result = a + b
+    return result
+
+def testing(hoho):
+    hoho(10, 20)
+    
+testing(test_func)
+</code></pre>
+<h3 id="3-함수의-결과값은-언제나-하나이다">3. 함수의 결과값은 언제나 하나이다.<a class="anchor" href="#3-함수의-결과값은-언제나-하나이다">#</a></h3>
+<ul>
+<li>각 함수의 값은 무조건 하나</li>
+<li>여러개의 return값이 나오는 것처럼 보이지만, 실제로는 다르다.</li>
+</ul>
+<pre><code class="language-python">def my_return(a, b):
+    return a+b, a*b
+
+result = my_return(3, 4)
+</code></pre>
+<ul>
+<li>위의 코드만 보면 오류가 날 것 같지만, 함수의 결과값은 2개가 아니라 언제나 1개이기 때문에 my_return 함수의 결과값 <code>a+b</code>, <code>a*b</code>는 튜플 값 하나인 <code>(a+b, a*b)</code>로 돌려준다.</li>
+<li>만약 반대로 여러개의 결과값처럼 받고 싶다면 다음과 같이 호출하면 된다.</li>
+</ul>
+<pre><code class="language-python">&gt;&gt;&gt; result1, result2 = add_and_mul(3, 4)
+</code></pre>
+<h3 id="4-매개변수에-초기값-미리-설정하기">4. 매개변수에 초기값 미리 설정하기.<a class="anchor" href="#4-매개변수에-초기값-미리-설정하기">#</a></h3>
+<ul>
+<li>Python의 함수는 <code>default parameter</code>를 사용할 수 있다.</li>
+<li>이를 통해서 인자를 미리 설정해서 생략하여 입력받을 수 있다.</li>
+<li>단, 맨 <code>마지막 인자</code>에만 적용이 가능하다.</li>
+</ul>
+<pre><code class="language-python">def say_myself(name, old, man=True): 
+    print(&quot;나의 이름은 %s 입니다.&quot; % name) 
+    print(&quot;나이는 %d살입니다.&quot; % old) 
+    if man: 
+        print(&quot;남자입니다.&quot;)
+    else: 
+        print(&quot;여자입니다.&quot;)
+
+say_myself(&quot;박응용&quot;, 27)
+say_myself(&quot;박응용&quot;, 27, False)
+</code></pre>
+<h3 id="5-local-variable-vs-global-variable">5. local variable vs. global variable<a class="anchor" href="#5-local-variable-vs-global-variable">#</a></h3>
+<ul>
+<li>일반적으로는 함수안에서 함수 밖의 변수를 변경하기 위해서 <code>return</code>을 이용한다.</li>
+<li>global variable를 이용하고 싶으면 <code>global</code>로 선언하여 사용하면 된다.</li>
+</ul>
+<pre><code class="language-python">tmp = 100
+
+def my_var(x):
+    global tmp
+    tmp += x
+    return tmp
+
+print(my_var(100))
+</code></pre>
+
+
+              
+                  
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+              
+          </article>
+          
+
+<ul class="tags__list">
+    
+    <li class="tag__item">
+        <a class="tag__link" href="https://banetta.github.io/tags/python/">Python</a>
+    </li>
+    <li class="tag__item">
+        <a class="tag__link" href="https://banetta.github.io/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC/">파이썬</a>
+    </li></ul>
+
+ <div class="pagination">
+  
+    <a class="pagination__item" href="https://banetta.github.io/post/4_python_control_statement/">
+        <span class="pagination__label">Previous Post</span>
+        <span class="pagination__title">[Python] Control Statement 제어문</span>
+    </a>
+  
+  
+</div>
+<script src="https://utteranc.es/client.js"
+repo="banetta/blog_comments"
+issue-term="title"
+theme="github-light"
+crossorigin="anonymous"
+async>       
+</script>
+
+
+          
+          <footer class="post__footer">
+            
+
+
+<div class="social-icons">
+  
+     
+    
+      <a
+        class="social-icons__link"
+        title="GitHub"
+        href="https://github.com/banetta"
+        target="_blank"
+        rel="me noopener"
+      >
+        <div class="social-icons__icon" style="background-image: url('https://banetta.github.io/svg/github.svg')"></div>
+      </a>
+    
+  
+     
+    
+      <a
+        class="social-icons__link"
+        title="Email"
+        href="mailto:banetion@gmail.com"
+        target="_blank"
+        rel="me noopener"
+      >
+        <div class="social-icons__icon" style="background-image: url('https://banetta.github.io/svg/email.svg')"></div>
+      </a>
+    
+  
+     
+    
+      <a
+        class="social-icons__link"
+        title="LinkedIn"
+        href="https://www.linkedin.com/in/han-sang-kim-aa8141153/"
+        target="_blank"
+        rel="me noopener"
+      >
+        <div class="social-icons__icon" style="background-image: url('https://banetta.github.io/svg/linkedin.svg')"></div>
+      </a>
+    
+     
+</div>
+
+            <p>© 2021 HanSang Banetta Kim</p>
+          </footer>
+          </div>
+      </div>
+      
+    </div>
+    
+
+  </main>
+
+   
+
+  
+  <script src="/js/index.min.49e4d8a384357d9b445b87371863419937ede9fa77737522ffb633073aebfa44.js" integrity="sha256-SeTYo4Q1fZtEW4c3GGNBmTft6fp3c3Ui/7YzBzrr&#43;kQ=" crossorigin="anonymous"></script>
+  
+  
+  <script src="https://unpkg.com/prismjs@1.20.0/components/prism-core.min.js"></script>
+
+  
+  <script src="https://unpkg.com/prismjs@1.20.0/plugins/autoloader/prism-autoloader.min.js"
+    data-autoloader-path="https://unpkg.com/prismjs@1.20.0/components/"></script>
+
+  
+
+
+</body>
+
+</html>

@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <copyright>© {year} HanSang Banetta Kim</copyright>
-    <lastBuildDate>Fri, 09 Jul 2021 16:52:09 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 14 Jul 2021 17:40:04 +0900</lastBuildDate>
     
 	<atom:link href="https://banetta.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[Python] 함수(Function)</title>
+      <link>https://banetta.github.io/post/5_python_%ED%95%A8%EC%88%98function/</link>
+      <pubDate>Wed, 14 Jul 2021 17:40:04 +0900</pubDate>
+      
+      <guid>https://banetta.github.io/post/5_python_%ED%95%A8%EC%88%98function/</guid>
+      <description>y = f(x)  특정 역할을 수행하는 코드 집합을 하나의 단위로 묶어놓은 것 입력값을 가지고 어떤 일을 수행한 다음에 그 결과물을 내어놓는 것   Python의 함수적 특징 1. 사용자 정의 함수 (User define function)  함수를 정의할 때 사용하는 keyword : def 함수명을 정의할 때 가독성이 있는 이름으로 정의해야한다.  숫자로 시작하면 안되고 대문자로 시작하지 않는다. 대문자로 시작하게 되면 Class를 지칭할 때와 겹치기 때문에 주의해야한다. _를 이용해서 의미를 구분해도 좋다 다른 특수기호는 쓰지 말것 함수 표현 : name_search, 클래스 표현 : NameSearch 다른 함수와 겹치지 않고 이미 사용하는 용어를 사용하지 않게 잘 지어야 한다.</description>
+    </item>
     
     <item>
       <title>[Python] Control Statement 제어문</title>
