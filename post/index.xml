@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <copyright>© {year} HanSang Banetta Kim</copyright>
-    <lastBuildDate>Wed, 14 Jul 2021 17:40:04 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 17 Aug 2021 17:49:12 +0900</lastBuildDate>
     
 	<atom:link href="https://banetta.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[Python] Python의 Class</title>
+      <link>https://banetta.github.io/post/7_python_object_class/</link>
+      <pubDate>Tue, 17 Aug 2021 17:49:12 +0900</pubDate>
+      
+      <guid>https://banetta.github.io/post/7_python_object_class/</guid>
+      <description>객체지향 class
+  객체 모델링의 수단 객체(instance)를 생성하기 위한 단위 ADT(Abstract Data Type)   class Car(object): # class variable example_var = 100 # initializer def __init__(self, maker, cc, price): self.maker = maker # property(속성) - instance variable self.cc = cc self.price = price # instance method def get_car_info(self): print(Car.example_var) return self.maker + str(self.cc) + str(self.price) car_1 = Car(&#39;kia&#39;, 1998, 10000) car_2 = Car(&#39;Hyundai&#39;, 2399, 20000)  class variable class가 저장되는 공간에 저장되었다가 이 class를 기반으로 instance가 생성되고 이 variable을 호출할 때 class 저장 공간에 접근해서 변수를 가져온다</description>
+    </item>
     
     <item>
       <title>[Python] 함수(Function)</title>

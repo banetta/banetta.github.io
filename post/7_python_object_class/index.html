@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+
+<head>
+  <title>[Python] Python의 Class | HanSang Banetta Kim</title>
+
+  <meta charset="UTF-8">
+  <meta name="language" content="en">
+  <meta name="description" content="">
+  <meta name="keywords" content="Python , 파이썬 , 객체지향 , object oriented">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  
+  
+
+  <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
+
+
+  
+  
+    
+ 
+  
+  
+  
+  
+  
+  
+    
+    <link type="text/css" rel="stylesheet" href="/css/post.min.d2cba5d8ddb952ac69f5be48e4a5cc7b8e952b422625763ebf77d449dc5e4387.css" integrity="sha256-0sul2N25Uqxp9b5I5KXMe46VK0ImJXY&#43;v3fUSdxeQ4c="/>
+  
+    
+    <link type="text/css" rel="stylesheet" href="/css/custom.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" integrity="sha256-47DEQpj8HBSa&#43;/TImW&#43;5JCeuQeRkm5NMpJWZG3hSuFU="/>
+  
+  
+   
+   
+    
+
+<script type="application/ld+json">
+  
+    { 
+      "@context": "http://schema.org", 
+      "@type": "WebSite", 
+      "url": "https:\/\/banetta.github.io\/post\/7_python_object_class\/",
+      "name": "[Python] Python의 Class",
+      "author": {
+        "@type": "Person",
+        "name": ""
+      },
+      "description": ""
+    }
+  
+  </script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-176305772-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</head>
+
+<body>
+  <div class="burger__container">
+  <div class="burger" aria-controls="navigation" aria-label="Menu">
+    <div class="burger__meat burger__meat--1"></div>
+    <div class="burger__meat burger__meat--2"></div>
+    <div class="burger__meat burger__meat--3"></div>
+  </div>
+</div>
+ 
+
+  <nav class="nav" id="navigation">
+  <ul class="nav__list">
+    
+    
+      <li>
+        <a  href="/">About</a>
+      </li>
+    
+      <li>
+        <a  href="/archives">Archives</a>
+      </li>
+    
+      <li>
+        <a  class="active"
+         href="/post">Post</a>
+      </li>
+    
+      <li>
+        <a  href="/tags">Tags</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+  <main>
+    
+    
+
+    <div class="flex-wrapper">
+      <div class="post__container">
+        <div class="post">
+          <header class="post__header">
+            <h1 id="post__title">[Python] Python의 Class</h1>
+            <time datetime="2021-08-17 17:49:12 &#43;0900 KST" class="post__date">Aug 17 2021</time> 
+          </header>
+          <article class="post__content">
+              
+<h2 id="객체지향">객체지향<a class="anchor" href="#객체지향">#</a></h2>
+<p><code>class</code></p>
+<blockquote>
+<ul>
+<li>객체 모델링의 수단</li>
+<li>객체(instance)를 생성하기 위한 단위</li>
+<li>ADT(Abstract Data Type)</li>
+</ul>
+</blockquote>
+<pre><code class="language-python">class Car(object):
+#   class variable
+    example_var = 100
+
+#     initializer
+    def __init__(self, maker, cc, price):
+        self.maker = maker # property(속성) - instance variable
+        self.cc = cc
+        self.price = price
+        
+#     instance method
+    def get_car_info(self):
+        print(Car.example_var)
+        return self.maker + str(self.cc) + str(self.price)
+    
+car_1 = Car('kia', 1998, 10000)
+car_2 = Car('Hyundai', 2399, 20000)
+
+</code></pre>
+<h3 id="class-variable">class variable<a class="anchor" href="#class-variable">#</a></h3>
+<p>class가 저장되는 공간에 저장되었다가 이 class를 기반으로 instance가 생성되고 이 variable을 호출할 때 class 저장 공간에 접근해서 변수를 가져온다</p>
+<h3 id="initializer">initializer<a class="anchor" href="#initializer">#</a></h3>
+<p>instance가 생성될 때 초기화를 담당함</p>
+<p>class를 기반으로 heap 영역에 메모리 공간을 할당할 수 있다.
+이 확보된 메모리 공간 자체를 <code>instance</code>라고 한다</p>
+<p>위의 예제에서 car_1과 car_2안에는 instance의 메모리 주소값이 들어있다. 이를 <code>reference variable</code>이라 한다.</p>
+<h3 id="-dot-operator">. (dot operator)<a class="anchor" href="#-dot-operator">#</a></h3>
+<p>객체가 있다는 것 == class가 있다는 것
+모든 객체는 기본적으로 변수(property)를 가지고 있고, 함수(method)를 가지고 있다.
+이런 객체가 가지는 property와 method를 사용하기 위해서 이용하는 연산자 이다.</p>
+<h3 id="python에서-class의-특징">Python에서 Class의 특징<a class="anchor" href="#python에서-class의-특징">#</a></h3>
+<p>python의 객체지향 특징 중 하나는 instance에 새로운 property나 method를 동적으로 추가하는게 가능하다.</p>
+<pre><code class="language-python">car_1.color = 'Red'
+</code></pre>
+<p>아이러니하게 객체지향과는 거리가 있는 특징이다. 이런 특징은 프로그램을 상당히 유연하게 작성할 수 있게 만들어준다.
+하지만 여기서 발생할 수 있는 문제가 있는데 바로 <code>scope</code>문제 이다.
+변수를 찾는 순서는 <code>instance namespace</code>, <code>class namespace</code>, <code>superclass namespace</code> 순서이다.</p>
+<pre><code class="language-python">#   결과가 어떻게 나올까요?
+car_1.example_var = 300
+car_2.get_car_info()
+</code></pre>
+<p><code>car_1.example_car</code>가 동작하는 과정에서 <code>instance namespace</code>를 check하고 같은 공간에 <code>example_var</code>가 없다는 것을 확인 후 python의 특징에 따라 동적으로 새로운 <code>instance variable</code>을 생성해버려서 차이점이 생겨버린다.
+직접 class variable을 변경하기 위해서는 class내의 제어하는 method를 통해 직접 접근하여 제어를 하면 된다.</p>
+<h3 id="예시">예시<a class="anchor" href="#예시">#</a></h3>
+<pre><code class="language-python">class Employee(object):
+    raise_rate = 1.1 # class variable(기본 연봉 인상률)
+    
+    def __init__(self, u_name, u_pay):
+#         instance variable
+        self.u_name = u_name
+        self.u_pay = u_pay
+        
+#     business method(여기서는 사람마다 다르기 때문에 instance method로 만들 것임)
+    def apply_raise(self):
+        self.u_pay = self.u_pay * self.raise_rate
+        
+    def get_user_info(self):
+        return &quot;현재 {}의 연봉은 {}입니다.&quot;.format(self.u_name, self.u_pay)
+    
+#     decorator를 이용해서 class method를 정의해야 해요!
+    @classmethod
+    def change_raise_rate(cls, rate): # class method이기 때문에 instance를 지칭하는 self가 아닌 class를 지칭하는 cls가 나와야함
+#         값이 들어올 때 class referance가 들어오기 때문에 바로 class variable로 지칭이 된다.
+        cls.raise_rate = rate
+        print('기본 연봉 인상률이 {}으로 조정되었습니다.'.format(cls.raise_rate))
+
+#     보통 class안에서 instance method와 class method는 각각 역할이 있는데.. property를 제어하지 않고 단일 동작하는 method를 작성할때는 어떻게 할까??
+#     decorator를 통해 static method로 작성하면 된다.
+#     @staticmethod
+#     def my_func():
+        
+emp_1 = Employee('Kim', 30000000)
+emp_2 = Employee('Kang', 20000000)
+
+# 연봉인상 전 두 사람의 정보를 출력
+print(emp_1.get_user_info())
+print(emp_2.get_user_info())
+
+# 연봉인상률을 변경해요
+Employee.change_raise_rate(1.5)
+# emp_1.apply_raise()
+# print(emp_1.get_user_info())
+# emp_1.change_raise_rate(1.7)
+
+# 연봉인상률을 적용해요
+emp_1.apply_raise()
+emp_2.apply_raise()
+
+# 변경된 인상률을 출력해요
+print(emp_1.get_user_info())
+print(emp_2.get_user_info())
+
+# emp_1.__u_mobile = '1234-5965'
+# 이런식으로 direct access를 할 수 없도록 제한할 수 없나요?
+# 이럴 때 property 앞에 __를 붙이면 java에서 사용되는 private 역할을 수행할 수 있습니다. 혹은 _를 붙이면 protected로 수행합니다. 이는 python 표준이지만 jupyter는 그렇지 않나봅니다..    
+</code></pre>
+<h3 id="객체지향의-꽃-상속inheritance">객체지향의 꽃 상속(Inheritance)<a class="anchor" href="#객체지향의-꽃-상속inheritance">#</a></h3>
+<p>class를 상속해서 다른 class를 확장시키는 기법이다.</p>
+<blockquote>
+<p>부모 class =&gt; parent class, super class, upper class
+자식 class =&gt; child class, sub class</p>
+</blockquote>
+<pre><code class="language-python"># 부모 class
+class Unit(object):
+    def __init__(self, damage, life):
+        self.damage = damage # 공격력
+        self.life = life # 생명력
+# 상속이 없다면??
+# class Tank(object):
+#     def __init__(self, damage, life, missile_ammo):
+#         self.damage = damage # 공격력
+#         self.life = life # 생명력
+#         self.missile_ammo = missile_ammo # 미사일 탄창수?
+
+# 상속을 사용하면?
+class Tank(Unit):   # Inheritance
+#     pass
+    def __init__(self, damage, life, missile_ammo):
+        super(Tank, self).__init__(damage, life)
+        self.missile_ammo = missile_ammo
+
+tank_1 = Tank(100, 50, 300)
+
+tank_1.damage = 1000
+</code></pre>
+<h3 id="magic-method">magic method<a class="anchor" href="#magic-method">#</a></h3>
+<p>보통 method 이름 앞에 __가 붙은 method를 지칭하며 class 안에 미리 정의된 특수한 기능을 하고 있는 method이다 (ex. <strong>init</strong>())</p>
+<pre><code class="language-python">class Part_time(Employee):
+    
+#     initializer역할(초기화 역할)
+    def __init__(self, name, pay, part):
+        super(Part_time, self).__init__(name, pay)
+        self.u_part = part
+        print('생성자가 호출되었어요!')
+        
+#     소멸자    
+    def __del__(self):
+        print('소멸자가 호출되었어요!')
+        
+#     instance를 문자열화 시킬때 호출되는 method
+    def __str__(self):
+        return '뿡뿡이'
+        
+    def get_part_time(self):
+        return '파트는 {} 입니다.'.format(self.part)
+    
+emp_3 = Part_time('Kong', 10000000, '편의점')
+
+print(emp_3)
+</code></pre>
+<h3 id="first-class일급-클래스">first class(일급 클래스)<a class="anchor" href="#first-class일급-클래스">#</a></h3>
+<p><code>first-class citizen</code> : 프로그래밍 개체(함수, 객체, 변수, 등등)들이 다음의 조건을 충족하면 기본적으로 first-class citizen이라고 한다.</p>
+<ol>
+<li>변수에 저장될 수 있다</li>
+<li>함수의 인자로 전달될 수 있어야 한다</li>
+<li>함수의 결과로 리턴될 수 있어야 한다.</li>
+</ol>
+<p>앞에서 지금까지 설명한 class로 부터 파생된 instance는 1급 객체라고 불린다.
+functions도 first class 조건을 만족 == python의 함수는 1급 함수
+단, 다른 언어에서는 아닐 수도 있다. (ex. C에서는 아님)</p>
+<pre><code class="language-python">
+def my_add(x, y):
+    return x + y
+
+print(my_add(10, 20))   #   result : 30
+
+# 1. 변수에 저장될 수 있어요!
+f = my_add
+print(f(100, 200))   #   result : 300
+
+# 2. 함수의 인자로 전달될 수 있어야 해요!
+def my_mul(x, y):
+    return x * y
+
+def my_operation(func, x, y):
+    result = func(x, y)
+    return result
+
+print(my_operation(my_mul, 10, 20))   #   result : 200
+
+# 3. 함수의 결과로 리턴될 수 있어야 해요!
+def addMaker(x): # x는 지역변수
+    def my_add_maker(y):
+        return x + y
+    return my_add_maker
+
+add_5 = addMaker(5)
+add_10 = addMaker(10)
+
+print(add_5(1))    #   result : 6 # 이상한데?
+print(add_10(1))    #   result : 11 # 머선129?
+# =&gt; Closure 현상 = 1급 함수에서 나타나는 현상
+</code></pre>
+<h3 id="module">Module<a class="anchor" href="#module">#</a></h3>
+<p>함수(function)나 변수, class들을 모아놓은 파일을 지칭하며 python에서 하나의 python 프로그램에서 불러다가 사용할 수 있는 python 파일을 지칭한다. Module을 사용하며 코드의 재 사용성을 높일 수 있다.</p>
+<blockquote>
+<p>Database관련 프로그래밍 - 라이브러리(class, function)</p>
+<p>채팅프로그램과 같은 network 프로그램 - 라이브러리(class , function)</p>
+<p>Framework = library + 동작 mechanism이 같이 들어가 있어요!ㄴ</p>
+</blockquote>
+
+
+              
+          </article>
+          
+
+<ul class="tags__list">
+    
+    <li class="tag__item">
+        <a class="tag__link" href="https://banetta.github.io/tags/python/">Python</a>
+    </li>
+    <li class="tag__item">
+        <a class="tag__link" href="https://banetta.github.io/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC/">파이썬</a>
+    </li>
+    <li class="tag__item">
+        <a class="tag__link" href="https://banetta.github.io/tags/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5/">객체지향</a>
+    </li>
+    </ul>
+
+ <div class="pagination">
+  
+    <a class="pagination__item" href="https://banetta.github.io/post/5_python_%ED%95%A8%EC%88%98function/">
+        <span class="pagination__label">Previous Post</span>
+        <span class="pagination__title">[Python] 함수(Function)</span>
+    </a>
+  
+  
+</div>
+<script src="https://utteranc.es/client.js"
+repo="banetta/blog_comments"
+issue-term="title"
+theme="github-light"
+crossorigin="anonymous"
+async>       
+</script>
+
+
+          
+          <footer class="post__footer">
+            
+
+
+<div class="social-icons">
+  
+     
+    
+      <a
+        class="social-icons__link"
+        title="GitHub"
+        href="https://github.com/banetta"
+        target="_blank"
+        rel="me noopener"
+      >
+        <div class="social-icons__icon" style="background-image: url('https://banetta.github.io/svg/github.svg')"></div>
+      </a>
+    
+  
+     
+    
+      <a
+        class="social-icons__link"
+        title="Email"
+        href="mailto:banetion@gmail.com"
+        target="_blank"
+        rel="me noopener"
+      >
+        <div class="social-icons__icon" style="background-image: url('https://banetta.github.io/svg/email.svg')"></div>
+      </a>
+    
+  
+     
+    
+      <a
+        class="social-icons__link"
+        title="LinkedIn"
+        href="https://www.linkedin.com/in/han-sang-kim-aa8141153/"
+        target="_blank"
+        rel="me noopener"
+      >
+        <div class="social-icons__icon" style="background-image: url('https://banetta.github.io/svg/linkedin.svg')"></div>
+      </a>
+    
+     
+</div>
+
+            <p>© 2021 HanSang Banetta Kim</p>
+          </footer>
+          </div>
+      </div>
+      
+    </div>
+    
+
+  </main>
+
+   
+
+  
+  <script src="/js/index.min.49e4d8a384357d9b445b87371863419937ede9fa77737522ffb633073aebfa44.js" integrity="sha256-SeTYo4Q1fZtEW4c3GGNBmTft6fp3c3Ui/7YzBzrr&#43;kQ=" crossorigin="anonymous"></script>
+  
+  
+  <script src="https://unpkg.com/prismjs@1.20.0/components/prism-core.min.js"></script>
+
+  
+  <script src="https://unpkg.com/prismjs@1.20.0/plugins/autoloader/prism-autoloader.min.js"
+    data-autoloader-path="https://unpkg.com/prismjs@1.20.0/components/"></script>
+
+  
+
+
+</body>
+
+</html>
