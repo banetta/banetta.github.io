@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+
+<head>
+  <title>[SQL] SQL 기초 | HanSang Banetta Kim</title>
+
+  <meta charset="UTF-8">
+  <meta name="language" content="en">
+  <meta name="description" content="">
+  <meta name="keywords" content="SQL , MySQL , DataBase , Data , Python , 파이썬">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  
+  
+
+  <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
+
+
+  
+  
+    
+ 
+  
+  
+  
+  
+  
+  
+    
+    <link type="text/css" rel="stylesheet" href="/css/post.min.d2cba5d8ddb952ac69f5be48e4a5cc7b8e952b422625763ebf77d449dc5e4387.css" integrity="sha256-0sul2N25Uqxp9b5I5KXMe46VK0ImJXY&#43;v3fUSdxeQ4c="/>
+  
+    
+    <link type="text/css" rel="stylesheet" href="/css/custom.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" integrity="sha256-47DEQpj8HBSa&#43;/TImW&#43;5JCeuQeRkm5NMpJWZG3hSuFU="/>
+  
+  
+   
+   
+    
+
+<script type="application/ld+json">
+  
+    { 
+      "@context": "http://schema.org", 
+      "@type": "WebSite", 
+      "url": "https:\/\/banetta.github.io\/post\/8_sql_sql_basic\/",
+      "name": "[SQL] SQL 기초",
+      "author": {
+        "@type": "Person",
+        "name": ""
+      },
+      "description": ""
+    }
+  
+  </script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-176305772-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</head>
+
+<body>
+  <div class="burger__container">
+  <div class="burger" aria-controls="navigation" aria-label="Menu">
+    <div class="burger__meat burger__meat--1"></div>
+    <div class="burger__meat burger__meat--2"></div>
+    <div class="burger__meat burger__meat--3"></div>
+  </div>
+</div>
+ 
+
+  <nav class="nav" id="navigation">
+  <ul class="nav__list">
+    
+    
+      <li>
+        <a  href="/">About</a>
+      </li>
+    
+      <li>
+        <a  href="/archives">Archives</a>
+      </li>
+    
+      <li>
+        <a  class="active"
+         href="/post">Post</a>
+      </li>
+    
+      <li>
+        <a  href="/tags">Tags</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+  <main>
+    
+    
+
+    <div class="flex-wrapper">
+      <div class="post__container">
+        <div class="post">
+          <header class="post__header">
+            <h1 id="post__title">[SQL] SQL 기초</h1>
+            <time datetime="2021-08-22 19:45:01 &#43;0900 KST" class="post__date">Aug 22 2021</time> 
+          </header>
+          <article class="post__content">
+              
+<h3 id="sql의-특징">SQL의 특징<a class="anchor" href="#sql의-특징">#</a></h3>
+<ul>
+<li>대소문자를 구분하지 않는다.</li>
+<li>관용적으로 키워드는 대문자를 이용한다.</li>
+<li>&hellip;(추가 예정)</li>
+</ul>
+<pre><code class="language-SQL">-- student table
+-- num	name	age	address
+-- 100	홍길동	20	서울
+-- 101	김길동	30	송파구
+-- 102	최길동	40	제주
+-- 103	임길동		인천
+
+-- Table 생성
+
+CREATE TABLE student (
+    num     VARCHAR(10)  PRIMARY KEY,
+    name    VARCHAR(20)  NOT NULL,
+    age     INT          ,
+    address VARCHAR(30)  NOT NULL    
+) DEFAULT CHARACTER SET utf8;   
+
+
+-- Table 삭제    
+DROP TABLE student;
+
+-- Record 입력(1행 데이터를 입력해 보아요!)
+
+INSERT INTO student(num,name,age,address) VALUES('100', '홍길동', 20, '서울');
+INSERT INTO student VALUES('101', '김길동', 30, '송파구');
+INSERT INTO student VALUES('102', '최길동', 40, '제주');
+INSERT INTO student VALUES('103', '임길동', NULL, '인천');  -- 가능
+INSERT INTO student(num,name,address) VALUES('103', '임길동', '인천');  -- 가능
+
+-- Record 삭제
+DELETE FROM student;
+DELETE FROM student WHERE num='102';
+
+-- Record Update
+UPDATE student SET name='김연아' WHERE num='100'; 
+
+-- CRUD(Create, Read, Update, Delete )
+
+-- Record Select
+SELECT num,name FROM student WHERE num='100';
+
+-- Transaction 처리때문에 이와 같은 과정을 거치는거예요!
+COMMIT;
+</code></pre>
+<h3 id="transaction">Transaction<a class="anchor" href="#transaction">#</a></h3>
+<p>SQL 작업에 대해서 최소 단위이다.</p>
+<p>은행의 이체작업을 예시로 설명해보자</p>
+<blockquote>
+<p>A의 통장에서 B의 통장으로 2000원을 이체</p>
+<ol>
+<li>A의 통장에 2000원이 있는지를 확인(SELECT)</li>
+<li>B의 통장 계좌가 정상 계좌인지 확인(SELECT)</li>
+<li>A의 통장 계좌에서 2000원을 차감(UPDATE)
+전기가 나갔어요!</li>
+<li>B의 통장에 잔액을 2000원 증가(UPDATE)</li>
+</ol>
+</blockquote>
+<p>DBMS의 가장 큰 특지이자 우리가 돈을 주고 사는 이유 중 하나는 Transaction을 걸면(설정하면) DBMS가 ACID 특성을 Transaction에게 부여해준다.</p>
+<blockquote>
+<p>ACID</p>
+<ul>
+<li>Atomicity (원자성)</li>
+<li>Consistency (일치성)</li>
+<li>Isolation (독립성)</li>
+<li>Durability (영구성)</li>
+</ul>
+</blockquote>
+<p>Transaction을 이용하려면 <code>AutoCommit mode</code>를 <code>False(off)</code>를 한 상태에서 작업을 한 뒤 <code>Commit</code> 해서 적용하거나 <code>Rollback</code> 하여 적용하면 된다.</p>
+<h3 id="python에서-사용해보자">Python에서 사용해보자<a class="anchor" href="#python에서-사용해보자">#</a></h3>
+<p>python 프로그램으로 MySQL DBMS에 접속해서 원하는 DB에서 Data를 가져와보자</p>
+<blockquote>
+<ol>
+<li>어떤 Module을 사용할지 결정(여기 예시에서는 pymysql을 이용)</li>
+<li>해당 Module을 download 해서 설치</li>
+</ol>
+<ul>
+<li>pip라는 Module을 통해 설치가 가능하다. 아니면 anaconda 환경에서는 conda를 이용하여 설치가 가능하다.</li>
+</ul>
+<ol start="3">
+<li>pymysql 설치</li>
+</ol>
+<ul>
+<li>conda install pymysql or pip install pymysql</li>
+<li>jupyter notebook 이나 visual studio 등에서 앞에 !를 붙여서 prompt 명령어를 실행할 수 있다</li>
+</ul>
+</blockquote>
+<h3 id="python에서-사용-예제">python에서 사용 예제<a class="anchor" href="#python에서-사용-예제">#</a></h3>
+<p>아래 예제에서 사용된 DB는 여러 책의 정보를 가지고 있는 DB이다.
+생성된 Table 형태는 다음과 같다.</p>
+<pre><code class="language-sql">CREATE TABLE `book` (
+  `bisbn` varchar(50) NOT NULL,
+  `btitle` varchar(200) DEFAULT NULL,
+  `bdate` varchar(20) DEFAULT NULL,
+  `bpage` int(11) DEFAULT NULL,
+  `bprice` int(11) DEFAULT NULL,
+  `bauthor` varchar(100) DEFAULT NULL,
+  `btranslator` varchar(100) DEFAULT NULL,
+  `bsupplement` varchar(100) DEFAULT NULL,
+  `bpublisher` varchar(100) DEFAULT NULL,
+  `bimgurl` varchar(100) DEFAULT NULL,
+  `bimgbase64` mediumtext,
+  PRIMARY KEY (`bisbn`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+</code></pre>
+<pre><code class="language-python"> 필요한 module import
+import pymysql
+
+# 데이터베이스 connection이 필요!
+# 내가 사용하려는 Database에 대한 논리적인 연결 객체가 필요.
+
+# 당연히 접속에 대한 정보를 인자로 넘겨줘야 해요!
+conn = pymysql.connect(host='localhost',
+                       db='library',
+                       user='python',
+                       password='python',
+                       charset='utf8')
+
+# 접속이 성공하면 instance가 생성되고 그렇지 않으면 None이 들어와요!
+print(conn)
+
+# 접속이 성공하면 해당 instance를 이용해서 Query를 실행할 수 있어요!
+# cursor 객체를 생성해야 해요!
+#cursor = conn.cursor()  # 이렇게 만들면 나중에 결과데이터가 tuple로 나와요!
+cursor = conn.cursor(pymysql.cursors.DictCursor)
+
+# SQL구문을 만들어야 해요!
+sql = 'SELECT btitle, bauthor, bprice FROM book WHERE bprice &gt; 50000;'
+
+# 생성한 SQL 문장을 cursor를 통해서 실행시켜요!
+cursor.execute(sql)
+
+# fetch계열의 함수를 이용해서 결과를 cursor로 부터 가져와요!
+result = cursor.fetchall()
+
+# print(result)
+
+for bookDict in result:
+    print('제목 : {}, 저자 : {}'.format(bookDict['btitle'],bookDict['bauthor']))
+
+</code></pre>
+<pre><code class="language-python"># 키워드를 입력받아서 해당 키워드를 책 제목에 포함하는 책을 검색한 후
+# 책의 제목과 저자를 출력하세요!
+
+search_keyword = input(&quot;검색키워드 : &quot;)
+
+sql = &quot;SELECT btitle, bauthor FROM book WHERE btitle LIKE '%{}%'&quot;.format(search_keyword)
+
+# 와일드카드 문자 %는 0개 이상의 문자를 의미해요!
+
+cursor.execute(sql)
+
+result = cursor.fetchall()
+
+for bookDict in result:
+    print('제목 : {}, 저자 : {}'.format(bookDict['btitle'],bookDict['bauthor']))
+</code></pre>
+
+
+              
+          </article>
+          
+
+<ul class="tags__list">
+    
+    <li class="tag__item">
+        <a class="tag__link" href="https://banetta.github.io/tags/sql/">SQL</a>
+    </li>
+    <li class="tag__item">
+        <a class="tag__link" href="https://banetta.github.io/tags/mysql/">MySQL</a>
+    </li>
+    <li class="tag__item">
+        <a class="tag__link" href="https://banetta.github.io/tags/database/">DataBase</a>
+    </li>
+    <li class="tag__item">
+        <a class="tag__link" href="https://banetta.github.io/tags/data/">Data</a>
+    </li>
+    <li class="tag__item">
+        <a class="tag__link" href="https://banetta.github.io/tags/python/">Python</a>
+    </li>
+    <li class="tag__item">
+        <a class="tag__link" href="https://banetta.github.io/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC/">파이썬</a>
+    </li></ul>
+
+ <div class="pagination">
+  
+    <a class="pagination__item" href="https://banetta.github.io/post/7_python_object_class/">
+        <span class="pagination__label">Previous Post</span>
+        <span class="pagination__title">[Python] Python의 Class</span>
+    </a>
+  
+  
+    <a class="pagination__item" href="https://banetta.github.io/post/9_python_exception_and_file_handling/">
+      <span class="pagination__label">Next Post</span>
+      <span class="pagination__title" >[Python] Exception and File Handling</span>
+    </a>
+  
+</div>
+<script src="https://utteranc.es/client.js"
+repo="banetta/blog_comments"
+issue-term="title"
+theme="github-light"
+crossorigin="anonymous"
+async>       
+</script>
+
+
+          
+          <footer class="post__footer">
+            
+
+
+<div class="social-icons">
+  
+     
+    
+      <a
+        class="social-icons__link"
+        title="GitHub"
+        href="https://github.com/banetta"
+        target="_blank"
+        rel="me noopener"
+      >
+        <div class="social-icons__icon" style="background-image: url('https://banetta.github.io/svg/github.svg')"></div>
+      </a>
+    
+  
+     
+    
+      <a
+        class="social-icons__link"
+        title="Email"
+        href="mailto:banetion@gmail.com"
+        target="_blank"
+        rel="me noopener"
+      >
+        <div class="social-icons__icon" style="background-image: url('https://banetta.github.io/svg/email.svg')"></div>
+      </a>
+    
+  
+     
+    
+      <a
+        class="social-icons__link"
+        title="LinkedIn"
+        href="https://www.linkedin.com/in/han-sang-kim-aa8141153/"
+        target="_blank"
+        rel="me noopener"
+      >
+        <div class="social-icons__icon" style="background-image: url('https://banetta.github.io/svg/linkedin.svg')"></div>
+      </a>
+    
+     
+</div>
+
+            <p>© 2021 HanSang Banetta Kim</p>
+          </footer>
+          </div>
+      </div>
+      
+    </div>
+    
+
+  </main>
+
+   
+
+  
+  <script src="/js/index.min.49e4d8a384357d9b445b87371863419937ede9fa77737522ffb633073aebfa44.js" integrity="sha256-SeTYo4Q1fZtEW4c3GGNBmTft6fp3c3Ui/7YzBzrr&#43;kQ=" crossorigin="anonymous"></script>
+  
+  
+  <script src="https://unpkg.com/prismjs@1.20.0/components/prism-core.min.js"></script>
+
+  
+  <script src="https://unpkg.com/prismjs@1.20.0/plugins/autoloader/prism-autoloader.min.js"
+    data-autoloader-path="https://unpkg.com/prismjs@1.20.0/components/"></script>
+
+  
+
+
+</body>
+
+</html>

@@ -7,10 +7,29 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <copyright>© {year} HanSang Banetta Kim</copyright>
-    <lastBuildDate>Tue, 17 Aug 2021 17:49:12 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 25 Aug 2021 22:55:05 +0900</lastBuildDate>
     
 	<atom:link href="https://banetta.github.io/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[Python] Exception and File Handling</title>
+      <link>https://banetta.github.io/post/9_python_exception_and_file_handling/</link>
+      <pubDate>Wed, 25 Aug 2021 22:55:05 +0900</pubDate>
+      
+      <guid>https://banetta.github.io/post/9_python_exception_and_file_handling/</guid>
+      <description>python의 Exception Handling (예외처리) 일반적으로 Programming 언어에서 사용되는 Error, Exception
+ Error : 복구가 불가능한 예외적 상황으로 프로그램의 실행이 중단됨 Exception : 복구가 가능한 예외적인 상황으로 프로그램의 실행이 중단되지 않고 지속적인 수행이 가능  try: my_list = [&#39;1&#39;, &#39;2&#39;] my_sum = 100 + int(my_list[0]) except ZeroDivisionError: # 예외처리코드 - 오류를 극복해서 프로그램이 강제종료되지 않도록 처리 print(&#39;0으로 나눌수 없어요!&#39;) except IndexError: print(&#39;index 사용에 문제가 있어요!&#39;) except: print(&#39;예기치 않은 문제가 있어요!&#39;) finally: print(&#39;오류의 여부와 상관없이 무조건 실행&#39;)  python의 File 처리 실제로는 python의 순수 파일 처리는 너무 느리기에 대용량 처리에 적합하지 않아 사용되지 않는다.</description>
+    </item>
+    
+    <item>
+      <title>[SQL] SQL 기초</title>
+      <link>https://banetta.github.io/post/8_sql_sql_basic/</link>
+      <pubDate>Sun, 22 Aug 2021 19:45:01 +0900</pubDate>
+      
+      <guid>https://banetta.github.io/post/8_sql_sql_basic/</guid>
+      <description>SQL의 특징  대소문자를 구분하지 않는다. 관용적으로 키워드는 대문자를 이용한다. &amp;hellip;(추가 예정)  -- student table -- num	name	age	address -- 100	홍길동	20	서울 -- 101	김길동	30	송파구 -- 102	최길동	40	제주 -- 103	임길동	인천 -- Table 생성 CREATE TABLE student ( num VARCHAR(10) PRIMARY KEY, name VARCHAR(20) NOT NULL, age INT , address VARCHAR(30) NOT NULL ) DEFAULT CHARACTER SET utf8; -- Table 삭제 DROP TABLE student; -- Record 입력(1행 데이터를 입력해 보아요!</description>
+    </item>
     
     <item>
       <title>[Python] Python의 Class</title>

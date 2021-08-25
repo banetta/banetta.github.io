@@ -7,10 +7,64 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <copyright>© {year} HanSang Banetta Kim</copyright>
-    <lastBuildDate>Tue, 17 Aug 2021 17:49:12 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 25 Aug 2021 22:55:05 +0900</lastBuildDate>
     
 	<atom:link href="https://banetta.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Data</title>
+      <link>https://banetta.github.io/tags/data/</link>
+      <pubDate>Wed, 25 Aug 2021 22:55:05 +0900</pubDate>
+      
+      <guid>https://banetta.github.io/tags/data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://banetta.github.io/tags/python/</link>
+      <pubDate>Wed, 25 Aug 2021 22:55:05 +0900</pubDate>
+      
+      <guid>https://banetta.github.io/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>파이썬</title>
+      <link>https://banetta.github.io/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC/</link>
+      <pubDate>Wed, 25 Aug 2021 22:55:05 +0900</pubDate>
+      
+      <guid>https://banetta.github.io/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DataBase</title>
+      <link>https://banetta.github.io/tags/database/</link>
+      <pubDate>Sun, 22 Aug 2021 19:45:01 +0900</pubDate>
+      
+      <guid>https://banetta.github.io/tags/database/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MySQL</title>
+      <link>https://banetta.github.io/tags/mysql/</link>
+      <pubDate>Sun, 22 Aug 2021 19:45:01 +0900</pubDate>
+      
+      <guid>https://banetta.github.io/tags/mysql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SQL</title>
+      <link>https://banetta.github.io/tags/sql/</link>
+      <pubDate>Sun, 22 Aug 2021 19:45:01 +0900</pubDate>
+      
+      <guid>https://banetta.github.io/tags/sql/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>object oriented</title>
@@ -22,29 +76,11 @@
     </item>
     
     <item>
-      <title>Python</title>
-      <link>https://banetta.github.io/tags/python/</link>
-      <pubDate>Tue, 17 Aug 2021 17:49:12 +0900</pubDate>
-      
-      <guid>https://banetta.github.io/tags/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>객체지향</title>
       <link>https://banetta.github.io/tags/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5/</link>
       <pubDate>Tue, 17 Aug 2021 17:49:12 +0900</pubDate>
       
       <guid>https://banetta.github.io/tags/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>파이썬</title>
-      <link>https://banetta.github.io/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC/</link>
-      <pubDate>Tue, 17 Aug 2021 17:49:12 +0900</pubDate>
-      
-      <guid>https://banetta.github.io/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC/</guid>
       <description></description>
     </item>
     
