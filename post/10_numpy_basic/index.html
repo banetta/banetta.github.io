@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+
+<head>
+  <title>[Numpy] Numpy | HanSang Banetta Kim</title>
+
+  <meta charset="UTF-8">
+  <meta name="language" content="en">
+  <meta name="description" content="">
+  <meta name="keywords" content="Python , 파이썬 , Anaconda , Jupyter Notebook , ML , 머신러닝 , AI">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  
+  
+
+  <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
+
+
+  
+  
+    
+ 
+  
+  
+  
+  
+  
+  
+    
+    <link type="text/css" rel="stylesheet" href="/css/post.min.d2cba5d8ddb952ac69f5be48e4a5cc7b8e952b422625763ebf77d449dc5e4387.css" integrity="sha256-0sul2N25Uqxp9b5I5KXMe46VK0ImJXY&#43;v3fUSdxeQ4c="/>
+  
+    
+    <link type="text/css" rel="stylesheet" href="/css/custom.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" integrity="sha256-47DEQpj8HBSa&#43;/TImW&#43;5JCeuQeRkm5NMpJWZG3hSuFU="/>
+  
+  
+   
+   
+    
+
+<script type="application/ld+json">
+  
+    { 
+      "@context": "http://schema.org", 
+      "@type": "WebSite", 
+      "url": "https:\/\/banetta.github.io\/post\/10_numpy_basic\/",
+      "name": "[Numpy] Numpy",
+      "author": {
+        "@type": "Person",
+        "name": ""
+      },
+      "description": ""
+    }
+  
+  </script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-176305772-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</head>
+
+<body>
+  <div class="burger__container">
+  <div class="burger" aria-controls="navigation" aria-label="Menu">
+    <div class="burger__meat burger__meat--1"></div>
+    <div class="burger__meat burger__meat--2"></div>
+    <div class="burger__meat burger__meat--3"></div>
+  </div>
+</div>
+ 
+
+  <nav class="nav" id="navigation">
+  <ul class="nav__list">
+    
+    
+      <li>
+        <a  href="/">About</a>
+      </li>
+    
+      <li>
+        <a  href="/archives">Archives</a>
+      </li>
+    
+      <li>
+        <a  class="active"
+         href="/post">Post</a>
+      </li>
+    
+      <li>
+        <a  href="/tags">Tags</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+  <main>
+    
+    
+
+    <div class="flex-wrapper">
+      <div class="post__container">
+        <div class="post">
+          <header class="post__header">
+            <h1 id="post__title">[Numpy] Numpy</h1>
+            <time datetime="2021-08-26 19:48:22 &#43;0900 KST" class="post__date">Aug 26 2021</time> 
+          </header>
+          <article class="post__content">
+              
+<h3 id="numpy">Numpy<a class="anchor" href="#numpy">#</a></h3>
+<p>Python의 Numpy는 Vector와 Matrix연산에 있어서 상당한 편의성을 제공하는 모듈로 Machine Learning과 Deep Learning의 기본 Module이다.</p>
+<h3 id="ndarray">ndarray<a class="anchor" href="#ndarray">#</a></h3>
+<p>Numpy는 새로운 Data Type을 이용한다.</p>
+<blockquote>
+<p>기존 Python의 대표적인 Data Type</p>
+<ul>
+<li>list</li>
+<li>tuple</li>
+<li>range</li>
+<li>dict</li>
+<li>set</li>
+</ul>
+</blockquote>
+<blockquote>
+<p><code>Ndarray</code>의 특징</p>
+<ol>
+<li>python의 list와 상당히 유사하게 생겼어요!</li>
+<li>python의 list는 각기 다른 데이터 타입을 저장할 수 있어요!   ex) a = [1, True, &lsquo;Hello&rsquo;, 3.14]</li>
+<li>ndarray는 동일한 데이터 타입만 사용할 수 있어요!</li>
+<li>list와 상당히 유사하지만 수학적 계산 속도면에서 비교가 불가능할 정도로 ndarray가 빠르고 효율적이예요</li>
+</ol>
+</blockquote>
+<pre><code class="language-python">import numpy as np
+
+a = [1, 2, 3, 4]
+print(type(a))      # &lt;class 'list'&gt;
+print(a)            # []를 사용하고 원소의 구분을 ,로 해요! [1, 2, 3, 4]
+print(type(a[0]))   # &lt;class 'int'&gt;
+
+b = np.array([1, 2, 3, 4])   # ndarray를 만들어내는 가장 대표적인 방법.
+print(type(b))               # &lt;class 'numpy.ndarray'&gt;
+print(b)                     # [1 2 3 4]   list와 유사하지만 요소의 구분을 space로 해요!
+print(type(b[0]))            # &lt;class 'numpy.int32'&gt;
+
+c = np.array([1, 2, 3.14, 4])   #
+print(c)                        # [1.   2.   3.14 4.  ]
+print(type(c[0]))               # &lt;class 'numpy.float64'&gt;
+
+d = np.array([1, 2, 3.14, 4], dtype=np.int32)   #
+print(d)                        # [1   2   3 4  ]
+print(type(d[0]))               # &lt;class 'numpy.int32'&gt;
+</code></pre>
+<h3 id="중첩리스트와-ndarray의-속성">중첩리스트와 ndarray의 속성<a class="anchor" href="#중첩리스트와-ndarray의-속성">#</a></h3>
+<pre><code class="language-python">a = [[1, 2, 3], [4, 5, 6]]  # 중첩리스트 =&gt; 2차원이라고 부르지는 않아요!
+
+b = np.array(a, dtype=np.float64)
+
+print(b)        # [[1. 2. 3.]
+                #  [4. 5. 6.]]
+    
+print(b[1,1])   # 5.0  
+
+# ndarray의 속성 몇가지만 알아보아요!
+print(b.dtype)   # 기본적인 numpy라는 것을 알고 있기에 실제 type인 float64가 출력됨
+print(b.ndim)    # 2 (차원의 수), ndim은 그다지 많이 사용되지 않아요!
+print(b.shape)   # 이 array의 형태를 tuple로 출력되고 tuple의 요소수가 차원의 개수이기에 ndim보다 많이 사용한다.
+
+
+a = [1, 2, 3, 4, 5]
+
+print(np.array(a).shape)   # (5,)
+
+a = [[[1,2],[3,4]], [[5,6],[7,8]]]
+print(np.array(a))    # [[[1 2]
+                      #  [3 4]]
+
+                      # [[5 6]
+                      #  [7 8]]]
+            
+print(np.array(a).shape)   # (2, 2, 2)        
+</code></pre>
+<pre><code class="language-python">a = [1, 2, 3, 4]   # list
+
+arr = np.array(a)   # int32형태의 ndarray(vector)가 생성
+print(arr)          # [1 2 3 4]
+print(arr.shape)    # (4,)
+
+arr.shape = (2, 2)
+print(arr)          # [[1 2]
+                    #  [3 4]]
+    
+arr.shape = (4, 1, 1)    
+print(arr)
+print(arr.size)    # 4   size는 요소의 개수를 알려줘요!
+</code></pre>
+<h3 id="data-type을-바꾸려면-어떻게-해야-하나요">data type을 바꾸려면 어떻게 해야 하나요?<a class="anchor" href="#data-type을-바꾸려면-어떻게-해야-하나요">#</a></h3>
+<pre><code class="language-python"># data type을 바꾸려면 어떻게 해야 하나요?
+
+a = [1, 2, 3, 4, 5, 6]
+
+arr = np.array(a, dtype=np.float64)
+
+print(arr)
+
+# int32형태의 ndarray로 변경하고 싶으면??  =&gt; astype()
+
+result = arr.astype(np.int32)
+print(result)
+</code></pre>
+<h3 id="ndarray를-만드는-또-다른-방법">ndarray를 만드는 또 다른 방법<a class="anchor" href="#ndarray를-만드는-또-다른-방법">#</a></h3>
+<pre><code class="language-python">arr = np.zeros((2,3,3))   # default data type은 np.float64
+print(arr)
+# [[[0. 0. 0.]
+#   [0. 0. 0.]
+#   [0. 0. 0.]]
+#
+#  [[0. 0. 0.]
+#   [0. 0. 0.]
+#   [0. 0. 0.]]]
+
+arr = np.ones((2,3))
+print(arr)
+# [[1. 1. 1.]
+#  [1. 1. 1.]]
+
+arr = np.empty((5,6))   # 임의의 메모리 값이 들어가게됨
+print(arr)
+# [[6.23042070e-307 4.67296746e-307 1.69121096e-306 1.33511018e-306
+#   7.56587585e-307 1.37961302e-306]
+# ...
+
+arr = np.full((3,4), 9.)
+print(arr)
+# [[9. 9. 9. 9.]
+#  [9. 9. 9. 9.]
+#  [9. 9. 9. 9.]]
+
+arr = np.array([[1,2,3],[4,5,6]], dtype=np.float64)
+print(arr)
+# [[1. 2. 3.]
+#  [4. 5. 6.]]
+
+result = np.zeros_like(arr) # arr의 shape를 따와서 적용한다 즉 위의 함수들에 _like를 붙이게 되면 이와 같이 동작하게 된다.
+print(result)
+# [[0. 0. 0.]
+#  [0. 0. 0.]]
+
+#   python의 range와 흡사함, 단, range와 다른 점은 range와 다르게 실제로 값을 가지고 있다
+arr = np.arange(0,10,2)
+print(arr)
+
+import matplotlib.pyplot as plt
+
+# np.linspace(start,stop,num)
+# start에서 stop까지 범위에서 num개를 균일한 간격으로 원소를 생성하고 배열을 만들어요!
+arr = np.linspace(0,10,11)
+print(arr)
+# 이해하기가 힘들어서 그래프로 그려보아요!
+# 그래프를 그리려면 당연히 module을 설치해야 해요! 가장 기반이 되는 module은 matplotlib
+# conda install matplotlib
+
+plt.plot(arr, '*')
+plt.show()  #   출력 결과 01
+</code></pre>
+<h4 id="출력-결과-01">출력 결과 01</h4>
+<p><img src="/img/10/graph01.png" alt="img"></p>
+
+
+              
+          </article>
+          
+
+<ul class="tags__list">
+    
+    <li class="tag__item">
+        <a class="tag__link" href="https://banetta.github.io/tags/python/">Python</a>
+    </li>
+    <li class="tag__item">
+        <a class="tag__link" href="https://banetta.github.io/tags/anaconda/">Anaconda</a>
+    </li>
+    
+    <li class="tag__item">
+        <a class="tag__link" href="https://banetta.github.io/tags/ml/">ML</a>
+    </li>
+    <li class="tag__item">
+        <a class="tag__link" href="https://banetta.github.io/tags/ai/">AI</a>
+    </li></ul>
+
+ <div class="pagination">
+  
+    <a class="pagination__item" href="https://banetta.github.io/post/9_python_exception_and_file_handling/">
+        <span class="pagination__label">Previous Post</span>
+        <span class="pagination__title">[Python] Exception and File Handling</span>
+    </a>
+  
+  
+    <a class="pagination__item" href="https://banetta.github.io/post/11_numpy_random/">
+      <span class="pagination__label">Next Post</span>
+      <span class="pagination__title" >[Numpy] ndarray를 Random하게</span>
+    </a>
+  
+</div>
+<script src="https://utteranc.es/client.js"
+repo="banetta/blog_comments"
+issue-term="title"
+theme="github-light"
+crossorigin="anonymous"
+async>       
+</script>
+
+
+          
+          <footer class="post__footer">
+            
+
+
+<div class="social-icons">
+  
+     
+    
+      <a
+        class="social-icons__link"
+        title="GitHub"
+        href="https://github.com/banetta"
+        target="_blank"
+        rel="me noopener"
+      >
+        <div class="social-icons__icon" style="background-image: url('https://banetta.github.io/svg/github.svg')"></div>
+      </a>
+    
+  
+     
+    
+      <a
+        class="social-icons__link"
+        title="Email"
+        href="mailto:banetion@gmail.com"
+        target="_blank"
+        rel="me noopener"
+      >
+        <div class="social-icons__icon" style="background-image: url('https://banetta.github.io/svg/email.svg')"></div>
+      </a>
+    
+  
+     
+    
+      <a
+        class="social-icons__link"
+        title="LinkedIn"
+        href="https://www.linkedin.com/in/han-sang-kim-aa8141153/"
+        target="_blank"
+        rel="me noopener"
+      >
+        <div class="social-icons__icon" style="background-image: url('https://banetta.github.io/svg/linkedin.svg')"></div>
+      </a>
+    
+     
+</div>
+
+            <p>© 2021 HanSang Banetta Kim</p>
+          </footer>
+          </div>
+      </div>
+      
+    </div>
+    
+
+  </main>
+
+   
+
+  
+  <script src="/js/index.min.49e4d8a384357d9b445b87371863419937ede9fa77737522ffb633073aebfa44.js" integrity="sha256-SeTYo4Q1fZtEW4c3GGNBmTft6fp3c3Ui/7YzBzrr&#43;kQ=" crossorigin="anonymous"></script>
+  
+  
+  <script src="https://unpkg.com/prismjs@1.20.0/components/prism-core.min.js"></script>
+
+  
+  <script src="https://unpkg.com/prismjs@1.20.0/plugins/autoloader/prism-autoloader.min.js"
+    data-autoloader-path="https://unpkg.com/prismjs@1.20.0/components/"></script>
+
+  
+
+
+</body>
+
+</html>

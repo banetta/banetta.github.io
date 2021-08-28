@@ -7,10 +7,43 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <copyright>© {year} HanSang Banetta Kim</copyright>
-    <lastBuildDate>Wed, 25 Aug 2021 22:55:05 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 28 Aug 2021 23:43:13 +0900</lastBuildDate>
     
 	<atom:link href="https://banetta.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[Numpy] Shape</title>
+      <link>https://banetta.github.io/post/12_numpy_shape/</link>
+      <pubDate>Sat, 28 Aug 2021 23:43:13 +0900</pubDate>
+      
+      <guid>https://banetta.github.io/post/12_numpy_shape/</guid>
+      <description>reshape() a = [[1,2,3], [4,5,6]] # python의 중첩리스트 arr = np.array(a) # ndarray 생성 print(arr) print(arr.shape) # (2,3) arr.shape = (3,2) print(arr)  위의 예처럼 shape속성값을 직접 변경해서 shape을 변경시키는것은 좋지 않아요! 대신 제공된 다른 함수를 이용해서 이 작업을 진행해요!
+arr = np.arange(0,12,1) print(arr) result = arr.reshape(4,3) # result는 ndarray가 아니예요! =&amp;gt; view # arr이 원본 result는 데이터를 가지고 있지 않아요! print(result) result[3,2] = 100 print(result) print(arr) arr = np.arange(0,12,1) print(arr) # 요소가 총 12개인 ndarray를 만들었어요!</description>
+    </item>
+    
+    <item>
+      <title>[Numpy] ndarray를 Random하게</title>
+      <link>https://banetta.github.io/post/11_numpy_random/</link>
+      <pubDate>Sat, 28 Aug 2021 23:31:15 +0900</pubDate>
+      
+      <guid>https://banetta.github.io/post/11_numpy_random/</guid>
+      <description>5가지 형태로 랜덤하게 ndarray를 생성할 수 있어요!
+ np.random.normal() : 정규분포 확률밀도함수에서 실수 표본을 추출해서 ndarray를 생성하며 정규분포 그래프를 평균,표준편차 필요  mean = 50 std = 2 arr = np.random.normal(mean,std,(100000,)) print(arr) plt.hist(arr,bins=1000) plt.show() # 출력 결과 01  출력 결과 01 [48.08026042 50.64705142 50.89328134 &amp;hellip; 50.29764312 49.10224386 49.97381904]  np.random.rand(d1,d2,d3,...) : 0 이상 1미만의 균등분포 확률밀도함수에서 실수 표본을 추출해서 ndarray를 생성  arr = np.random.rand(100000) print(arr) plt.hist(arr,bins=100) plt.show() # 출력 결과 02  출력 결과 02 [0.</description>
+    </item>
+    
+    <item>
+      <title>[Numpy] Numpy</title>
+      <link>https://banetta.github.io/post/10_numpy_basic/</link>
+      <pubDate>Thu, 26 Aug 2021 19:48:22 +0900</pubDate>
+      
+      <guid>https://banetta.github.io/post/10_numpy_basic/</guid>
+      <description>Numpy Python의 Numpy는 Vector와 Matrix연산에 있어서 상당한 편의성을 제공하는 모듈로 Machine Learning과 Deep Learning의 기본 Module이다.
+ndarray Numpy는 새로운 Data Type을 이용한다.
+ 기존 Python의 대표적인 Data Type
+ list tuple range dict set    Ndarray의 특징
+ python의 list와 상당히 유사하게 생겼어요! python의 list는 각기 다른 데이터 타입을 저장할 수 있어요! ex) a = [1, True, &amp;lsquo;Hello&amp;rsquo;, 3.14] ndarray는 동일한 데이터 타입만 사용할 수 있어요! list와 상당히 유사하지만 수학적 계산 속도면에서 비교가 불가능할 정도로 ndarray가 빠르고 효율적이예요   import numpy as np a = [1, 2, 3, 4] print(type(a)) # &amp;lt;class &#39;list&#39;&amp;gt; print(a) # []를 사용하고 원소의 구분을 ,로 해요!</description>
+    </item>
     
     <item>
       <title>[Python] Exception and File Handling</title>

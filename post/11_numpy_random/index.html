@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+
+<head>
+  <title>[Numpy] ndarray를 Random하게 | HanSang Banetta Kim</title>
+
+  <meta charset="UTF-8">
+  <meta name="language" content="en">
+  <meta name="description" content="">
+  <meta name="keywords" content="Python , 파이썬 , Anaconda , Jupyter Notebook , ML , 머신러닝 , AI">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  
+  
+
+  <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
+
+
+  
+  
+    
+ 
+  
+  
+  
+  
+  
+  
+    
+    <link type="text/css" rel="stylesheet" href="/css/post.min.d2cba5d8ddb952ac69f5be48e4a5cc7b8e952b422625763ebf77d449dc5e4387.css" integrity="sha256-0sul2N25Uqxp9b5I5KXMe46VK0ImJXY&#43;v3fUSdxeQ4c="/>
+  
+    
+    <link type="text/css" rel="stylesheet" href="/css/custom.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" integrity="sha256-47DEQpj8HBSa&#43;/TImW&#43;5JCeuQeRkm5NMpJWZG3hSuFU="/>
+  
+  
+   
+   
+    
+
+<script type="application/ld+json">
+  
+    { 
+      "@context": "http://schema.org", 
+      "@type": "WebSite", 
+      "url": "https:\/\/banetta.github.io\/post\/11_numpy_random\/",
+      "name": "[Numpy] ndarray를 Random하게",
+      "author": {
+        "@type": "Person",
+        "name": ""
+      },
+      "description": ""
+    }
+  
+  </script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-176305772-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</head>
+
+<body>
+  <div class="burger__container">
+  <div class="burger" aria-controls="navigation" aria-label="Menu">
+    <div class="burger__meat burger__meat--1"></div>
+    <div class="burger__meat burger__meat--2"></div>
+    <div class="burger__meat burger__meat--3"></div>
+  </div>
+</div>
+ 
+
+  <nav class="nav" id="navigation">
+  <ul class="nav__list">
+    
+    
+      <li>
+        <a  href="/">About</a>
+      </li>
+    
+      <li>
+        <a  href="/archives">Archives</a>
+      </li>
+    
+      <li>
+        <a  class="active"
+         href="/post">Post</a>
+      </li>
+    
+      <li>
+        <a  href="/tags">Tags</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+  <main>
+    
+    
+
+    <div class="flex-wrapper">
+      <div class="post__container">
+        <div class="post">
+          <header class="post__header">
+            <h1 id="post__title">[Numpy] ndarray를 Random하게</h1>
+            <time datetime="2021-08-28 23:31:15 &#43;0900 KST" class="post__date">Aug 28 2021</time> 
+          </header>
+          <article class="post__content">
+              
+<p>5가지 형태로 랜덤하게 ndarray를 생성할 수 있어요!</p>
+<ul>
+<li><code>np.random.normal()</code> : 정규분포 확률밀도함수에서 실수 표본을 추출해서 ndarray를 생성하며 정규분포 그래프를 평균,표준편차 필요</li>
+</ul>
+<pre><code class="language-python">mean = 50
+std = 2
+arr = np.random.normal(mean,std,(100000,))
+print(arr)
+plt.hist(arr,bins=1000)
+plt.show()  # 출력 결과 01
+</code></pre>
+<h4 id="출력-결과-01">출력 결과 01</h4>
+<p>[48.08026042 50.64705142 50.89328134 &hellip; 50.29764312 49.10224386
+49.97381904]
+<img src="/img/11/graph01.png" alt="img"></p>
+<ul>
+<li><code>np.random.rand(d1,d2,d3,...)</code> : 0 이상 1미만의 균등분포 확률밀도함수에서 실수 표본을 추출해서 ndarray를 생성</li>
+</ul>
+<pre><code class="language-python">arr = np.random.rand(100000)
+print(arr)
+plt.hist(arr,bins=100)
+plt.show()  # 출력 결과 02
+</code></pre>
+<h4 id="출력-결과-02">출력 결과 02</h4>
+<p>[0.28523578 0.55571099 0.83913149 &hellip; 0.8335679  0.61201189 0.92283897]
+<img src="/img/11/graph02.png" alt="img"></p>
+<ul>
+<li><code>np.random.randn()</code> : 표준 정규분포상에서 실수 표본을 추출해서 ndarray를 생성, 평균이 0이고 표준편차가 1인 정규분포를 표준정규분포</li>
+</ul>
+<pre><code class="language-python">arr = np.random.randn(100000)
+print(arr)
+plt.hist(arr,bins=100)
+plt.show()  # 출력 결과 03
+</code></pre>
+<h4 id="출력-결과-03">출력 결과 03</h4>
+<p>[-1.65893962  0.83696072 -0.74883022 &hellip;  2.84925579  0.02987112
+0.89703998]
+<img src="/img/11/graph03.png" alt="img"></p>
+<ul>
+<li><code>np.random.randint(low, high, shape)</code> : 최소값과 최대값 사이에서 정해진 shape으로 난수를 추출해서 ndarray를 생성, 균등분포를 이용해서 난수 추출</li>
+</ul>
+<pre><code class="language-python">arr = np.random.randint(-100, 100, (100000,))
+print(arr)
+plt.hist(arr,bins=100)
+plt.show()  # 출력 결과 04
+</code></pre>
+<h4 id="출력-결과-04">출력 결과 04</h4>
+<p>[-22  40  51 &hellip; -17 -32  66]
+<img src="/img/11/graph04.png" alt="img"></p>
+<ul>
+<li><code>np.random.random(shape)</code> : 0이상 1미만의 균등분포에서 실수 난수를 추출해서 ndarray를 생성</li>
+</ul>
+<pre><code class="language-python">arr = np.random.random((100000,))
+print(arr)
+plt.hist(arr,bins=100)
+plt.show()  # 출력 결과 05
+</code></pre>
+<h4 id="출력-결과-05">출력 결과 05</h4>
+<p>[0.55844588 0.75907513 0.62556412 &hellip; 0.56736381 0.46927807 0.85982802]
+<img src="/img/11/graph05.png" alt="img"></p>
+<h3 id="정리-random값을-이용해서-ndarray를-생성하는-방법">정리. random값을 이용해서 ndarray를 생성하는 방법!!<a class="anchor" href="#정리-random값을-이용해서-ndarray를-생성하는-방법">#</a></h3>
+<blockquote>
+<ol>
+<li>python의 list를 이용해서 ndarray생성 =&gt; np.array()</li>
+<li>np.ones(), np.zeros(), np.full(), np.empty(), np.ones_like()</li>
+<li>np.arange()</li>
+<li>np.linspace()</li>
+<li>np.random.~~() 랜덤값으로 ndarray를 생성하는 5가지 함수</li>
+</ol>
+</blockquote>
+<h3 id="numpy-난수-관련-함수">Numpy 난수 관련 함수<a class="anchor" href="#numpy-난수-관련-함수">#</a></h3>
+<p>난수의 재현성을 확보해보아요!</p>
+<ul>
+<li>랜덤값(난수) : 컴퓨터의 난수는 알고리즘에 근거해요. 초기값(<code>seed</code>)을 이용해서 특정 알고리즘을 수행시켜서 난수값을 도출</li>
+</ul>
+<pre><code class="language-python">import numpy as np
+
+np.random.seed(3) # seed 설정
+
+arr = np.random.randint(0,100,(5,))
+print(arr)
+</code></pre>
+<h3 id="데이터의-순서를-바꾸려면-shuffle">데이터의 순서를 바꾸려면?? <code>shuffle()</code><a class="anchor" href="#데이터의-순서를-바꾸려면-shuffle">#</a></h3>
+<p>shuffle()을 사용하면 ndarray의 원본이 바뀌게 된다.</p>
+<pre><code class="language-python">arr = np.arange(0,10,2)
+print(arr)
+
+np.random.shuffle(arr)
+print(arr)
+</code></pre>
+<h3 id="data-set에서-일부를-무작위로-sampling을-수행-choice">Data set에서 일부를 무작위로 sampling을 수행 <code>choice()</code><a class="anchor" href="#data-set에서-일부를-무작위로-sampling을-수행-choice">#</a></h3>
+<pre><code class="language-python"># numpy.random.choice(a, size, replace, p)
+# a : ndarray, 혹은 정수가 나오면 arange()를 수행한 결과
+# size : sample 개수
+# replace=True : 한번 뽑은걸 다시 뽑을 수 있어요!
+# ndarray =&gt; p=[0.1, 0.3, 0, 0.1, 0.1, 0.35, 0.05]
+
+arr = np.array([1,2,3,4,5,6,7])
+print(arr)
+arr = np.arange(5)
+result = np.random.choice(arr,3, replace=False, p=[0.1, 0.3, 0, 0.1, 0.1, 0.35, 0.05])
+print(result)
+</code></pre>
+
+
+              
+          </article>
+          
+
+<ul class="tags__list">
+    
+    <li class="tag__item">
+        <a class="tag__link" href="https://banetta.github.io/tags/python/">Python</a>
+    </li>
+    <li class="tag__item">
+        <a class="tag__link" href="https://banetta.github.io/tags/anaconda/">Anaconda</a>
+    </li>
+    
+    <li class="tag__item">
+        <a class="tag__link" href="https://banetta.github.io/tags/ml/">ML</a>
+    </li>
+    <li class="tag__item">
+        <a class="tag__link" href="https://banetta.github.io/tags/ai/">AI</a>
+    </li></ul>
+
+ <div class="pagination">
+  
+    <a class="pagination__item" href="https://banetta.github.io/post/10_numpy_basic/">
+        <span class="pagination__label">Previous Post</span>
+        <span class="pagination__title">[Numpy] Numpy</span>
+    </a>
+  
+  
+    <a class="pagination__item" href="https://banetta.github.io/post/12_numpy_shape/">
+      <span class="pagination__label">Next Post</span>
+      <span class="pagination__title" >[Numpy] Shape</span>
+    </a>
+  
+</div>
+<script src="https://utteranc.es/client.js"
+repo="banetta/blog_comments"
+issue-term="title"
+theme="github-light"
+crossorigin="anonymous"
+async>       
+</script>
+
+
+          
+          <footer class="post__footer">
+            
+
+
+<div class="social-icons">
+  
+     
+    
+      <a
+        class="social-icons__link"
+        title="GitHub"
+        href="https://github.com/banetta"
+        target="_blank"
+        rel="me noopener"
+      >
+        <div class="social-icons__icon" style="background-image: url('https://banetta.github.io/svg/github.svg')"></div>
+      </a>
+    
+  
+     
+    
+      <a
+        class="social-icons__link"
+        title="Email"
+        href="mailto:banetion@gmail.com"
+        target="_blank"
+        rel="me noopener"
+      >
+        <div class="social-icons__icon" style="background-image: url('https://banetta.github.io/svg/email.svg')"></div>
+      </a>
+    
+  
+     
+    
+      <a
+        class="social-icons__link"
+        title="LinkedIn"
+        href="https://www.linkedin.com/in/han-sang-kim-aa8141153/"
+        target="_blank"
+        rel="me noopener"
+      >
+        <div class="social-icons__icon" style="background-image: url('https://banetta.github.io/svg/linkedin.svg')"></div>
+      </a>
+    
+     
+</div>
+
+            <p>© 2021 HanSang Banetta Kim</p>
+          </footer>
+          </div>
+      </div>
+      
+    </div>
+    
+
+  </main>
+
+   
+
+  
+  <script src="/js/index.min.49e4d8a384357d9b445b87371863419937ede9fa77737522ffb633073aebfa44.js" integrity="sha256-SeTYo4Q1fZtEW4c3GGNBmTft6fp3c3Ui/7YzBzrr&#43;kQ=" crossorigin="anonymous"></script>
+  
+  
+  <script src="https://unpkg.com/prismjs@1.20.0/components/prism-core.min.js"></script>
+
+  
+  <script src="https://unpkg.com/prismjs@1.20.0/plugins/autoloader/prism-autoloader.min.js"
+    data-autoloader-path="https://unpkg.com/prismjs@1.20.0/components/"></script>
+
+  
+
+
+</body>
+
+</html>
