@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <copyright>© {year} HanSang Banetta Kim</copyright>
-    <lastBuildDate>Sat, 28 Aug 2021 23:43:13 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 29 Aug 2021 00:36:45 +0900</lastBuildDate>
     
 	<atom:link href="https://banetta.github.io/tags/ai/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[Numpy] Numpy의 제어</title>
+      <link>https://banetta.github.io/post/13_numpy_control/</link>
+      <pubDate>Sun, 29 Aug 2021 00:36:45 +0900</pubDate>
+      
+      <guid>https://banetta.github.io/post/13_numpy_control/</guid>
+      <description>indexing &amp;amp; slicing python list의 indexing, slicing과 상당히 유사하다.
+# indexing arr = np.arange(10,20,1) print(arr) for item in arr: print(item) for idx,item in enumerate(arr): print(idx, item) # 2차원 ndarray의 indexing arr = np.array([[1,2,3], [4,5,6], [7,8,9], [10,11,12]]) print(arr) print(arr[1,2]) print(arr[2,:]) # 1차원의 ndarray가 결과로 나와요(view) print(arr[1:3,:]) # slicing arr = np.arange(0,5,1) print(arr) tmp = arr[0:3] print(tmp) arr[0] = 100 print(arr) print(tmp)  numpy의 ndarray에 대해서 slicing을 하면 view가 생성된다.
+Boolean Indexing Boolean Indexing은 배열의 각 요소의 선택여부를 True,False로 구성된 Boolean Mask를 이용하여 지정하는 방식으로 Boolean Mask안에서 True로 지정된 요소만 indexing하는 방식.</description>
+    </item>
     
     <item>
       <title>[Numpy] Shape</title>
