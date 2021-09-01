@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <copyright>© {year} HanSang Banetta Kim</copyright>
-    <lastBuildDate>Sun, 29 Aug 2021 00:36:45 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 02 Sep 2021 00:44:17 +0900</lastBuildDate>
     
 	<atom:link href="https://banetta.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>AI</title>
       <link>https://banetta.github.io/tags/ai/</link>
-      <pubDate>Sun, 29 Aug 2021 00:36:45 +0900</pubDate>
+      <pubDate>Thu, 02 Sep 2021 00:44:17 +0900</pubDate>
       
       <guid>https://banetta.github.io/tags/ai/</guid>
       <description></description>
@@ -24,7 +24,7 @@
     <item>
       <title>Anaconda</title>
       <link>https://banetta.github.io/tags/anaconda/</link>
-      <pubDate>Sun, 29 Aug 2021 00:36:45 +0900</pubDate>
+      <pubDate>Thu, 02 Sep 2021 00:44:17 +0900</pubDate>
       
       <guid>https://banetta.github.io/tags/anaconda/</guid>
       <description></description>
@@ -33,7 +33,7 @@
     <item>
       <title>Jupyter Notebook</title>
       <link>https://banetta.github.io/tags/jupyter-notebook/</link>
-      <pubDate>Sun, 29 Aug 2021 00:36:45 +0900</pubDate>
+      <pubDate>Thu, 02 Sep 2021 00:44:17 +0900</pubDate>
       
       <guid>https://banetta.github.io/tags/jupyter-notebook/</guid>
       <description></description>
@@ -42,7 +42,7 @@
     <item>
       <title>ML</title>
       <link>https://banetta.github.io/tags/ml/</link>
-      <pubDate>Sun, 29 Aug 2021 00:36:45 +0900</pubDate>
+      <pubDate>Thu, 02 Sep 2021 00:44:17 +0900</pubDate>
       
       <guid>https://banetta.github.io/tags/ml/</guid>
       <description></description>
@@ -51,16 +51,25 @@
     <item>
       <title>Numpy</title>
       <link>https://banetta.github.io/tags/numpy/</link>
-      <pubDate>Sun, 29 Aug 2021 00:36:45 +0900</pubDate>
+      <pubDate>Thu, 02 Sep 2021 00:44:17 +0900</pubDate>
       
       <guid>https://banetta.github.io/tags/numpy/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>Pandas</title>
+      <link>https://banetta.github.io/tags/pandas/</link>
+      <pubDate>Thu, 02 Sep 2021 00:44:17 +0900</pubDate>
+      
+      <guid>https://banetta.github.io/tags/pandas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Python</title>
       <link>https://banetta.github.io/tags/python/</link>
-      <pubDate>Sun, 29 Aug 2021 00:36:45 +0900</pubDate>
+      <pubDate>Thu, 02 Sep 2021 00:44:17 +0900</pubDate>
       
       <guid>https://banetta.github.io/tags/python/</guid>
       <description></description>
