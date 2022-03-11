@@ -17,7 +17,6 @@
 
   <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
 
-
   
   
     
@@ -29,7 +28,7 @@
   
   
     
-    <link type="text/css" rel="stylesheet" href="/css/post.min.3ce4c308a0b116694b00d770a881cb958116b8957e6a3c1ac4e6340eeaac3a17.css" integrity="sha256-POTDCKCxFmlLANdwqIHLlYEWuJV&#43;ajwaxOY0DuqsOhc="/>
+    <link type="text/css" rel="stylesheet" href="/css/post.min.2cb93c91050d1853bf971cc31e00122edd6e0f405aa1de3b7f8ef67ea3b5a79a.css" integrity="sha256-LLk8kQUNGFO/lxzDHgASLt1uD0Baod47f472fqO1p5o="/>
   
     
     <link type="text/css" rel="stylesheet" href="/css/custom.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" integrity="sha256-47DEQpj8HBSa&#43;/TImW&#43;5JCeuQeRkm5NMpJWZG3hSuFU="/>
@@ -137,38 +136,17 @@ NameError: name 'a' is not defined
 <h1 id="data-type">Data Type!</h1>
 <p>Python에서 기본적으로 제공하는 <code>built-in DataType</code>으로 아래 6가지를 주로 많이 사용함</p>
 <blockquote>
-<p><a href="#-1-numeric%ec%88%ab%ec%9e%90%ed%98%95" 
-  
-  
->1. Numeric(숫자형)</a></p>
-<p><a href="#-2-sequence" 
-  
-  
->2. Sequence</a></p>
-<p><a href="#-3-text-sequence" 
-  
-  
->3. Text Sequence</a></p>
-<p><a href="#-4-dictionary" 
-  
-  
->4. Dictionary</a></p>
-<p><a href="#-5-set" 
-  
-  
->5. Set</a></p>
-<p><a href="#-6-bool" 
-  
-  
->6. Bool</a></p>
+<p><a href="#-1-numeric%EC%88%AB%EC%9E%90%ED%98%95">1. Numeric(숫자형)</a></p>
+<p><a href="#-2-sequence">2. Sequence</a></p>
+<p><a href="#-3-text-sequence">3. Text Sequence</a></p>
+<p><a href="#-4-dictionary">4. Dictionary</a></p>
+<p><a href="#-5-set">5. Set</a></p>
+<p><a href="#-6-bool">6. Bool</a></p>
 </blockquote>
 <p>이런 DataType을 확인하고 싶거나 데이터가 어떤 class의 instance인지 확인하고 싶으면 <code>type()</code>함수를 사용하면 확인할 수 있다.</p>
 <pre><code class="language-python">print(type(a))
 </code></pre>
-<h2 id="1-numeric숫자형data-type"><a href="#data-type" 
-  
-  
->1. Numeric(숫자형)</a></h2>
+<h2 id="1-numeric숫자형data-type"><a href="#data-type">1. Numeric(숫자형)</a><a class="anchor" href="#1-numeric숫자형data-type">#</a></h2>
 <hr>
 <p>Numeric 타입은 숫자 값을 저장한다.</p>
 <pre><code>- int(부호있는 정수)
@@ -210,10 +188,7 @@ b = 4.53e1-7j
 <summary>Tip. 왜 파이썬은 허수단위를 <b>j</b>로 사용하는가?</summary>
 <p><code>i</code>는 많은 폰트에서 <code>1(숫자)</code>, <code>l(L)</code>과 관련하여 모호성 문제를 가지고 있어서 시각적으로 특이한 편인 <code>j</code>를 사용한다고 한다.</p>
 <blockquote>
-<p><em>관련 thread</em>  <a href="https://bugs.python.org/issue10562" 
-  
-   target="_blank" rel="noreferrer noopener" 
->Change &lsquo;j&rsquo; for imaginary unit into an &lsquo;i&rsquo;</a></p>
+<p><em>관련 thread</em>  <a href="https://bugs.python.org/issue10562">Change &lsquo;j&rsquo; for imaginary unit into an &lsquo;i&rsquo;</a></p>
 </blockquote>
 </details>
 <br>
@@ -253,10 +228,7 @@ a % b
 
 7 // 4 # 1
 </code></pre>
-<h2 id="2-sequencedata-type"><a href="#data-type" 
-  
-  
->2. Sequence</a></h2>
+<h2 id="2-sequencedata-type"><a href="#data-type">2. Sequence</a><a class="anchor" href="#2-sequencedata-type">#</a></h2>
 <hr>
 <ul>
 <li>DataType - <code>List</code>
@@ -451,10 +423,7 @@ print(a) # [1, 2, 3, 4, 7, 8, 10]
 <pre><code class="language-python">a.reverse()
 print(a) # [10, 8, 7, 4, 3, 2, 1]
 </code></pre>
-<h2 id="3-text-sequencedata-type"><a href="#data-type" 
-  
-  
->3. Text Sequence</a></h2>
+<h2 id="3-text-sequencedata-type"><a href="#data-type">3. Text Sequence</a><a class="anchor" href="#3-text-sequencedata-type">#</a></h2>
 <hr>
 <ul>
 <li>
@@ -533,10 +502,7 @@ a = 'a,b,c,d,e'
 result = a.split(',')
 print(result) # ['a', 'b', 'c', 'd', 'e']
 </code></pre>
-<h2 id="4-dictionarydata-type"><a href="#data-type" 
-  
-  
->4. Dictionary</a></h2>
+<h2 id="4-dictionarydata-type"><a href="#data-type">4. Dictionary</a><a class="anchor" href="#4-dictionarydata-type">#</a></h2>
 <hr>
 <ul>
 <li>사람은 누그든지 <code>이름 = 홍길동</code>, <code>생일 = xx월 xx일</code> 등으로 구별할 수 있다.</li>
@@ -596,10 +562,7 @@ print(a.values())
 # 사용하는 이유는 sorting을 하여 반복처리가 가능해진다!
 print(a.items())
 </code></pre>
-<h2 id="5-setdata-type"><a href="#data-type" 
-  
-  
->5. Set</a></h2>
+<h2 id="5-setdata-type"><a href="#data-type">5. Set</a><a class="anchor" href="#5-setdata-type">#</a></h2>
 <hr>
 <ul>
 <li>집합 자료형</li>
@@ -633,10 +596,7 @@ print(a &amp; b)
 # Difference 차집합
 print(a - b)
 </code></pre>
-<h2 id="6-booldata-type"><a href="#data-type" 
-  
-  
->6. Bool</a></h2>
+<h2 id="6-booldata-type"><a href="#data-type">6. Bool</a><a class="anchor" href="#6-booldata-type">#</a></h2>
 <hr>
 <ul>
 <li>논리값인 True &amp; False</li>
@@ -685,7 +645,7 @@ print(not b)
 <ul class="tags__list">
     
     <li class="tag__item">
-        <a class="tag__link" href="https://banetta.github.io/tags/python/">Python</a>
+        <a class="tag__link" href="https://banetta.github.io/tags/python/">python</a>
     </li></ul>
 
  <div class="pagination">
@@ -695,21 +655,14 @@ print(not b)
         <span class="pagination__title">[Python] Comments 주석</span>
     </a>
   
+
   
     <a class="pagination__item" href="https://banetta.github.io/post/4_python_control_statement/">
       <span class="pagination__label">Next Post</span>
-      <span class="pagination__title" >[Python] Control Statement 제어문</span>
+      <span class="pagination__title" >[Python] Control Statement 제어문</a>
     </a>
   
 </div>
-<script src="https://utteranc.es/client.js"
-repo="banetta/blog_comments"
-issue-term="title"
-theme="github-light"
-crossorigin="anonymous"
-async>       
-</script>
-
 
           
           <footer class="post__footer">
@@ -720,46 +673,34 @@ async>
   
      
     
-      <a
-        class="social-icons__link"
-        title="GitHub"
-        href="https://github.com/banetta"
-        target="_blank"
-        rel="me noopener"
-      >
+      <a class="social-icons__link" title="GitHub"
+         href="https://github.com/banetta"
+         target="_blank" rel="noopener">
         <div class="social-icons__icon" style="background-image: url('https://banetta.github.io/svg/github.svg')"></div>
       </a>
     
   
      
     
-      <a
-        class="social-icons__link"
-        title="Email"
-        href="mailto:banetion@gmail.com"
-        target="_blank"
-        rel="me noopener"
-      >
+      <a class="social-icons__link" title="Email"
+         href="mailto:banetion@gmail.com"
+         target="_blank" rel="noopener">
         <div class="social-icons__icon" style="background-image: url('https://banetta.github.io/svg/email.svg')"></div>
       </a>
     
   
      
     
-      <a
-        class="social-icons__link"
-        title="LinkedIn"
-        href="https://www.linkedin.com/in/han-sang-kim-aa8141153/"
-        target="_blank"
-        rel="me noopener"
-      >
+      <a class="social-icons__link" title="LinkedIn"
+         href="https://www.linkedin.com/in/han-sang-kim-aa8141153/"
+         target="_blank" rel="noopener">
         <div class="social-icons__icon" style="background-image: url('https://banetta.github.io/svg/linkedin.svg')"></div>
       </a>
     
      
 </div>
 
-            <p>© 2021 HanSang Banetta Kim</p>
+            <p>© 2022 HanSang Banetta Kim</p>
           </footer>
           </div>
       </div>
