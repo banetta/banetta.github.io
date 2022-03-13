@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>backend on HanSang Banetta Kim</title>
+    <link>https://banetta.github.io/tags/backend/</link>
+    <description>Recent content in backend on HanSang Banetta Kim</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <copyright>© {year} HanSang Banetta Kim</copyright>
+    <lastBuildDate>Mon, 02 Dec 2019 18:23:27 +0900</lastBuildDate>
+    
+	<atom:link href="https://banetta.github.io/tags/backend/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[Web] kpu theater 영화 정보 서비스</title>
+      <link>https://banetta.github.io/archives/web_kpu_theater/</link>
+      <pubDate>Mon, 02 Dec 2019 18:23:27 +0900</pubDate>
+      
+      <guid>https://banetta.github.io/archives/web_kpu_theater/</guid>
+      <description>팀원 KTT - Kpu Theater 영화 정보와 영화 리뷰를 제공하는 서비스로 JSP와 Servlet, tomcat을 이용하여 구현
+메인 사용자 페이지 관리자 페이지 DB (User &amp;amp; Review) 동작 시나리오 프로젝트 진행 일정 서버 구성도</description>
+    </item>
+    
+  </channel>
+</rss>

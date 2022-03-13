@@ -170,6 +170,16 @@ ndarray Numpy는 새로운 Data Type을 이용한다.
     </item>
     
     <item>
+      <title>[Web] kpu theater 영화 정보 서비스</title>
+      <link>https://banetta.github.io/archives/web_kpu_theater/</link>
+      <pubDate>Mon, 02 Dec 2019 18:23:27 +0900</pubDate>
+      
+      <guid>https://banetta.github.io/archives/web_kpu_theater/</guid>
+      <description>팀원 KTT - Kpu Theater 영화 정보와 영화 리뷰를 제공하는 서비스로 JSP와 Servlet, tomcat을 이용하여 구현
+메인 사용자 페이지 관리자 페이지 DB (User &amp;amp; Review) 동작 시나리오 프로젝트 진행 일정 서버 구성도</description>
+    </item>
+    
+    <item>
       <title>[Java] 다자간 메신저 개발</title>
       <link>https://banetta.github.io/archives/java-%EB%8B%A4%EC%9E%90%EA%B0%84-%EB%A9%94%EC%8B%A0%EC%A0%80-%EA%B0%9C%EB%B0%9C.md/</link>
       <pubDate>Tue, 23 Jul 2019 00:31:05 +0900</pubDate>

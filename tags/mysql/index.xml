@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>MySQL on HanSang Banetta Kim</title>
+    <title>mysql on HanSang Banetta Kim</title>
     <link>https://banetta.github.io/tags/mysql/</link>
-    <description>Recent content in MySQL on HanSang Banetta Kim</description>
+    <description>Recent content in mysql on HanSang Banetta Kim</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <copyright>© {year} HanSang Banetta Kim</copyright>
@@ -19,6 +19,16 @@
       
       <guid>https://banetta.github.io/post/8_sql_sql_basic/</guid>
       <description>SQL의 특징  대소문자를 구분하지 않는다. 관용적으로 키워드는 대문자를 이용한다. &amp;hellip;(추가 예정)  -- student table -- num	name	age	address -- 100	홍길동	20	서울 -- 101	김길동	30	송파구 -- 102	최길동	40	제주 -- 103	임길동	인천 -- Table 생성 CREATE TABLE student ( num VARCHAR(10) PRIMARY KEY, name VARCHAR(20) NOT NULL, age INT , address VARCHAR(30) NOT NULL ) DEFAULT CHARACTER SET utf8; -- Table 삭제 DROP TABLE student; -- Record 입력(1행 데이터를 입력해 보아요!</description>
+    </item>
+    
+    <item>
+      <title>[Web] kpu theater 영화 정보 서비스</title>
+      <link>https://banetta.github.io/archives/web_kpu_theater/</link>
+      <pubDate>Mon, 02 Dec 2019 18:23:27 +0900</pubDate>
+      
+      <guid>https://banetta.github.io/archives/web_kpu_theater/</guid>
+      <description>팀원 KTT - Kpu Theater 영화 정보와 영화 리뷰를 제공하는 서비스로 JSP와 Servlet, tomcat을 이용하여 구현
+메인 사용자 페이지 관리자 페이지 DB (User &amp;amp; Review) 동작 시나리오 프로젝트 진행 일정 서버 구성도</description>
     </item>
     
   </channel>
