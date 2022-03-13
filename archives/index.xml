@@ -22,6 +22,24 @@
     </item>
     
     <item>
+      <title>[Elastic Stack] Apache 서버와 http를 이용한 hftp client와 서버 모니터링</title>
+      <link>https://banetta.github.io/archives/elastic-stack_apache_file_transfer/</link>
+      <pubDate>Wed, 12 Jun 2019 01:37:51 +0900</pubDate>
+      
+      <guid>https://banetta.github.io/archives/elastic-stack_apache_file_transfer/</guid>
+      <description>팀원 팀장
+김수혁 (https://github.com/suhyeokkim)
+팀원
+김한상 (https://github.com/banetta)
+금기륜
+정지윤 (https://github.com/jiyun-jiyun)
+hftp client http를 이용하여 command를 입력받는 client를 통해 유사 ftp를 제공하는 서비스
+팀에서 웹서버 및 모니터링 서버 구축 담당을 하였습니다.
+서버 구성도
+구현 결과 </description>
+    </item>
+    
+    <item>
       <title>[OOP] 공항관리시스템</title>
       <link>https://banetta.github.io/archives/oop_kpu_airport_control_system.md/</link>
       <pubDate>Tue, 19 Jun 2018 15:15:18 +0900</pubDate>
