@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Python on HanSang Banetta Kim</title>
+    <title>python on HanSang Banetta Kim</title>
     <link>https://banetta.github.io/tags/python/</link>
-    <description>Recent content in Python on HanSang Banetta Kim</description>
+    <description>Recent content in python on HanSang Banetta Kim</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <copyright>© {year} HanSang Banetta Kim</copyright>
@@ -103,6 +103,16 @@ ndarray Numpy는 새로운 Data Type을 이용한다.
       <guid>https://banetta.github.io/post/7_python_object_class/</guid>
       <description>객체지향 class
   객체 모델링의 수단 객체(instance)를 생성하기 위한 단위 ADT(Abstract Data Type)   class Car(object): # class variable example_var = 100 # initializer def __init__(self, maker, cc, price): self.maker = maker # property(속성) - instance variable self.cc = cc self.price = price # instance method def get_car_info(self): print(Car.example_var) return self.maker + str(self.cc) + str(self.price) car_1 = Car(&#39;kia&#39;, 1998, 10000) car_2 = Car(&#39;Hyundai&#39;, 2399, 20000)  class variable class가 저장되는 공간에 저장되었다가 이 class를 기반으로 instance가 생성되고 이 variable을 호출할 때 class 저장 공간에 접근해서 변수를 가져온다</description>
+    </item>
+    
+    <item>
+      <title>[Django] 패션 편집숍을 위한 사이트</title>
+      <link>https://banetta.github.io/archives/django_fashion_online_shop/</link>
+      <pubDate>Sat, 14 Aug 2021 21:06:42 +0900</pubDate>
+      
+      <guid>https://banetta.github.io/archives/django_fashion_online_shop/</guid>
+      <description>프로젝트 주제 선정  작업 분할이 명확하게 구분 가능하고 짧은 픞로젝트 기간동안 완성할 수 있는 주제 중 온라인 쇼핑몰로 결정함 일반적인 쇼핑몰 보다 비교적 구조가 단순하고 깔끔한 사이트를 참고  프로젝트 일정 프로젝트 구성 환경 python, Django, javascript, mysql(docker), wsl2(ubuntu), pycharm, Naver Open API
+프로젝트 기능   회원가입 / 로그인   게시판 및 상품페이지(SNS 공유)   </description>
     </item>
     
     <item>

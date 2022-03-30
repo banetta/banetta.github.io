@@ -106,6 +106,16 @@ ndarray Numpy는 새로운 Data Type을 이용한다.
     </item>
     
     <item>
+      <title>[Django] 패션 편집숍을 위한 사이트</title>
+      <link>https://banetta.github.io/archives/django_fashion_online_shop/</link>
+      <pubDate>Sat, 14 Aug 2021 21:06:42 +0900</pubDate>
+      
+      <guid>https://banetta.github.io/archives/django_fashion_online_shop/</guid>
+      <description>프로젝트 주제 선정  작업 분할이 명확하게 구분 가능하고 짧은 픞로젝트 기간동안 완성할 수 있는 주제 중 온라인 쇼핑몰로 결정함 일반적인 쇼핑몰 보다 비교적 구조가 단순하고 깔끔한 사이트를 참고  프로젝트 일정 프로젝트 구성 환경 python, Django, javascript, mysql(docker), wsl2(ubuntu), pycharm, Naver Open API
+프로젝트 기능   회원가입 / 로그인   게시판 및 상품페이지(SNS 공유)   </description>
+    </item>
+    
+    <item>
       <title>[Python] 함수(Function)</title>
       <link>https://banetta.github.io/post/5_python_%ED%95%A8%EC%88%98function/</link>
       <pubDate>Wed, 14 Jul 2021 17:40:04 +0900</pubDate>

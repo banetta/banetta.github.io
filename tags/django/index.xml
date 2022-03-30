@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>JSP on HanSang Banetta Kim</title>
-    <link>https://banetta.github.io/tags/jsp/</link>
-    <description>Recent content in JSP on HanSang Banetta Kim</description>
+    <title>Django on HanSang Banetta Kim</title>
+    <link>https://banetta.github.io/tags/django/</link>
+    <description>Recent content in Django on HanSang Banetta Kim</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <copyright>© {year} HanSang Banetta Kim</copyright>
     <lastBuildDate>Sat, 14 Aug 2021 21:06:42 +0900</lastBuildDate>
     
-	<atom:link href="https://banetta.github.io/tags/jsp/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://banetta.github.io/tags/django/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -20,16 +20,6 @@
       <guid>https://banetta.github.io/archives/django_fashion_online_shop/</guid>
       <description>프로젝트 주제 선정  작업 분할이 명확하게 구분 가능하고 짧은 픞로젝트 기간동안 완성할 수 있는 주제 중 온라인 쇼핑몰로 결정함 일반적인 쇼핑몰 보다 비교적 구조가 단순하고 깔끔한 사이트를 참고  프로젝트 일정 프로젝트 구성 환경 python, Django, javascript, mysql(docker), wsl2(ubuntu), pycharm, Naver Open API
 프로젝트 기능   회원가입 / 로그인   게시판 및 상품페이지(SNS 공유)   </description>
-    </item>
-    
-    <item>
-      <title>[Web] kpu theater 영화 정보 서비스</title>
-      <link>https://banetta.github.io/archives/web_kpu_theater/</link>
-      <pubDate>Mon, 02 Dec 2019 18:23:27 +0900</pubDate>
-      
-      <guid>https://banetta.github.io/archives/web_kpu_theater/</guid>
-      <description>팀원 KTT - Kpu Theater 영화 정보와 영화 리뷰를 제공하는 서비스로 JSP와 Servlet, tomcat을 이용하여 구현
-메인 사용자 페이지 관리자 페이지 DB (User &amp;amp; Review) 동작 시나리오 프로젝트 진행 일정 서버 구성도</description>
     </item>
     
   </channel>

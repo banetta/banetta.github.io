@@ -67,7 +67,7 @@
     </item>
     
     <item>
-      <title>Python</title>
+      <title>python</title>
       <link>https://banetta.github.io/tags/python/</link>
       <pubDate>Thu, 02 Sep 2021 00:44:17 +0900</pubDate>
       
@@ -121,6 +121,33 @@
     </item>
     
     <item>
+      <title>Django</title>
+      <link>https://banetta.github.io/tags/django/</link>
+      <pubDate>Sat, 14 Aug 2021 21:06:42 +0900</pubDate>
+      
+      <guid>https://banetta.github.io/tags/django/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>JSP</title>
+      <link>https://banetta.github.io/tags/jsp/</link>
+      <pubDate>Sat, 14 Aug 2021 21:06:42 +0900</pubDate>
+      
+      <guid>https://banetta.github.io/tags/jsp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web</title>
+      <link>https://banetta.github.io/tags/web/</link>
+      <pubDate>Sat, 14 Aug 2021 21:06:42 +0900</pubDate>
+      
+      <guid>https://banetta.github.io/tags/web/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>backend</title>
       <link>https://banetta.github.io/tags/backend/</link>
       <pubDate>Mon, 02 Dec 2019 18:23:27 +0900</pubDate>
@@ -157,15 +184,6 @@
     </item>
     
     <item>
-      <title>JSP</title>
-      <link>https://banetta.github.io/tags/jsp/</link>
-      <pubDate>Mon, 02 Dec 2019 18:23:27 +0900</pubDate>
-      
-      <guid>https://banetta.github.io/tags/jsp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>kibana</title>
       <link>https://banetta.github.io/tags/kibana/</link>
       <pubDate>Mon, 02 Dec 2019 18:23:27 +0900</pubDate>
@@ -198,15 +216,6 @@
       <pubDate>Mon, 02 Dec 2019 18:23:27 +0900</pubDate>
       
       <guid>https://banetta.github.io/tags/server/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Web</title>
-      <link>https://banetta.github.io/tags/web/</link>
-      <pubDate>Mon, 02 Dec 2019 18:23:27 +0900</pubDate>
-      
-      <guid>https://banetta.github.io/tags/web/</guid>
       <description></description>
     </item>
     
